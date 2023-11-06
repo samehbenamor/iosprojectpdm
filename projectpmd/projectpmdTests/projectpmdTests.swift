@@ -1,14 +1,14 @@
 //
-//  pdmprojectTests.swift
-//  pdmprojectTests
+//  projectpmdTests.swift
+//  projectpmdTests
 //
 //  Created by Sameh ben amor on 6/11/2023.
 //
 
 import XCTest
-@testable import pdmproject
+@testable import projectpmd
 
-final class pdmprojectTests: XCTestCase {
+final class projectpmdTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

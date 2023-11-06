@@ -1,13 +1,13 @@
 //
-//  pdmprojectUITestsLaunchTests.swift
-//  pdmprojectUITests
+//  projectpmdUITestsLaunchTests.swift
+//  projectpmdUITests
 //
 //  Created by Sameh ben amor on 6/11/2023.
 //
 
 import XCTest
 
-final class pdmprojectUITestsLaunchTests: XCTestCase {
+final class projectpmdUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
