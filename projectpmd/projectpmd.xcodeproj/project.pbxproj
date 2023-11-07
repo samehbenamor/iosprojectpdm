@@ -14,6 +14,8 @@
 		5077961F2AF9208100A84051 /* projectpmdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077961E2AF9208100A84051 /* projectpmdTests.swift */; };
 		507796292AF9208100A84051 /* projectpmdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507796282AF9208100A84051 /* projectpmdUITests.swift */; };
 		5077962B2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */; };
+		B0D67B502AFA62650079AF80 /* Cree_evntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */; };
+		B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Reg.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
 		507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Bol.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
 		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
+		B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cree_evntView.swift; sourceTree = "<group>"; };
+		B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liste_evntView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				5077960F2AF9208000A84051 /* ContentView.swift */,
+				B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */,
+				B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,8 +327,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D67B502AFA62650079AF80 /* Cree_evntView.swift in Sources */,
 				507796102AF9208000A84051 /* ContentView.swift in Sources */,
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
+				B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
