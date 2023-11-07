@@ -7,7 +7,7 @@
 
 import SwiftUI
 import CoreData
-struct ContentView: View {
+struct UserProfileView: View {
     var body: some View {
         ZStack() {
             Group {
@@ -60,28 +60,48 @@ struct ContentView: View {
                         .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
                         .foregroundColor(.white)
                         .offset(x: 2.92, y: -57.93)
-                    Text("Organisateur\n ")
-                        .font(Font.custom("Nimbus Sans L", size: 24).weight(.bold))
+                    Text("Organisateur")
+                        .font(Font.custom("Nimbus Sans L", size: 24))
                         .foregroundColor(Color(red: 0.90, green: 0.21, blue: 0.16))
                         .offset(x: 4.56, y: -9.07)
-                    Rectangle()
+                    Button(action: {
+                        // Add the action you want the button to perform here
+                    }) {
+                        Image("Vector-6")
+                                .resizable()
+                                .frame(width: 28, height: 26)
+                    }
                         .foregroundColor(.clear)
                         .frame(width: 55.79, height: 55.79)
                         .background(.black)
                         .cornerRadius(30)
                         .offset(x: -148.40, y: 47.08)
-                    Rectangle()
+                    Button(action: {
+                        // Add the action you want the button to perform here
+                    }) {
+                        Image("Vector")
+                                .resizable()
+                                .frame(width: 40, height: 30)
+                    }
                         .foregroundColor(.clear)
                         .frame(width: 55.79, height: 55.79)
                         .background(.black)
                         .cornerRadius(30)
                         .offset(x: -0.40, y: 51)
-                    Rectangle()
+                    
+                    Button(action: {
+                        // Add the action you want the button to perform here
+                    }) {
+                        Image("Vector-2")
+                                .resizable()
+                                .frame(width: 34, height: 8)
+                    }
                         .foregroundColor(.clear)
                         .frame(width: 55.79, height: 55.79)
                         .background(.black)
                         .cornerRadius(30)
                         .offset(x: 148.40, y: 47.08)
+                    
                 }
                 .frame(width: 352.59, height: 157.79)
                 .offset(x: 0.30, y: -40.11)
@@ -97,6 +117,10 @@ struct ContentView: View {
                                 .stroke(.white, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
+                    Image("Vector-3")
+                                    .resizable()
+                                    .frame(width: 28, height: 26)
+                                    .offset(x: -40, y: 1.09)
                     Text("Vérifié")
                         .font(Font.custom("Nimbus Sans L", size: 24).weight(.bold))
                         .foregroundColor(.white)
@@ -119,7 +143,7 @@ struct ContentView: View {
                     Text("Admin")
                         .font(Font.custom("Nimbus Sans L", size: 24).weight(.bold))
                         .foregroundColor(.white)
-                        .offset(x: 14.17, y: 1.45)
+                        .offset(x: 14.17, y: 0.5)
                 }
                 .frame(width: 116.63, height: 49.41)
                 .offset(x: -117.68, y: 157.84)
@@ -135,6 +159,10 @@ struct ContentView: View {
                                 .stroke(.white, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
+                    Image("Vector-4")
+                                    .resizable()
+                                    .frame(width: 19.62, height: 25)
+                                    .offset(x: -125, y: -1)
                     Text("+5")
                         .font(Font.custom("Nimbus Sans L", size: 24).weight(.bold))
                         .foregroundColor(.white)
@@ -154,6 +182,10 @@ struct ContentView: View {
                                 .stroke(.white, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
+                    Image("Vector-5")
+                                    .resizable()
+                                    .frame(width: 28, height: 26)
+                                    .offset(x: -75, y: 1.09)
                     Text("Top contributeur")
                         .font(Font.custom("Nimbus Sans L", size: 20).weight(.bold))
                         .foregroundColor(.white)
@@ -176,9 +208,21 @@ struct ContentView: View {
                         )
                         .offset(x: 0, y: 0)
                     Text("Nous sommes Croissant rouge et nous acceptons volontiers vos dons.")
-                        .font(Font.custom("Nimbus Sans L", size: 20).weight(.bold))
+                        .font(Font.custom("Nimbus Sans L", size: 18).weight(.bold))
                         .foregroundColor(.white)
                         .offset(x: 0.38, y: -11.13)
+                    Image("Vector-7")
+                                    .resizable()
+                                    .frame(width: 27, height: 27)
+                                    .offset(x: -75, y: 70)
+                    Image("Vector-8")
+                                    .resizable()
+                                    .frame(width: 27, height: 27)
+                                    .offset(x: 0, y: 70)
+                    Image("Vector-9")
+                                    .resizable()
+                                    .frame(width: 27, height: 27)
+                                    .offset(x: 75, y: 70)
                 }
                 .frame(width: 353, height: 213.33)
                 .offset(x: 0.50, y: 322.67)
@@ -189,8 +233,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        UserProfileView()
     }
 }
