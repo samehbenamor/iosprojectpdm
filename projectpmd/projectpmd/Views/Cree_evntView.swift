@@ -24,44 +24,51 @@ struct Cree_evntView: View {
                 
                 TextField("Nom de l'événement", text: $eventName)
                     .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-                                    .frame(width: 380, height: 66)
-                                    .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
-                                    .foregroundColor(.white)
-                                    .cornerRadius(19)
-                                    .overlay(RoundedRectangle(cornerRadius: 24)
-                                        .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
-                                       
-                                    ).padding(.top)
+                    .frame(width: 380, height: 66)
+                    .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
+                    .cornerRadius(19)
+                    .overlay(RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
+                    )
+                    .foregroundColor(.black) // Changer la couleur du texte en noir
+                    .padding(.top)
+
+                    
                 
                 
                 
                 
     
                 DatePicker("Date de début", selection: $eventDate, displayedComponents: .date)
-                    .datePickerStyle(DefaultDatePickerStyle())
-                    .padding()
                     .frame(width: 380, height: 66)
+                    .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
                     .cornerRadius(19)
-                    
-                    .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
-
+                    .overlay(RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
+                       
+                    )
                 
                 
-                DatePicker("Date de début", selection: $eventDate, displayedComponents: .date)
-                    .datePickerStyle(DefaultDatePickerStyle())
-                    .padding()
+                DatePicker("Heure de début", selection: $eventTime, displayedComponents: .hourAndMinute)
                     .frame(width: 380, height: 66)
                     .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
 
+                    .cornerRadius(19)
+                    .overlay(RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
+                       
+                    ).padding(5)
                 
                 Picker("Emplacement de l'événement", selection: $eventLocation) {
                     Text("En personne").tag("En personne")
                     Text("Virtuel").tag("Virtuel")
-                }
-                
-                .padding()
-                
-                
+                }.frame(width: 380, height: 66)
+                    .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
+                    .cornerRadius(19)
+                    .overlay(RoundedRectangle(cornerRadius: 24)
+                        .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
+                       
+                    ).padding(5)
                 
                 
                 
@@ -70,29 +77,27 @@ struct Cree_evntView: View {
                 TextField("Ajouter une invitation à rejoindre un groupe WhatsApp", text: $eventdesc)
                     .frame(width: 380, height: 66)
                     .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
-                    .foregroundColor(.white)
                     .cornerRadius(19)
                     .overlay(RoundedRectangle(cornerRadius: 24)
                         .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
                        
-                    )
+                    ).padding(5)
 
                 TextField("Détail", text: $textwhats)
                     .frame(width: 380, height: 66)
                     .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
-                    .foregroundColor(.white)
-                    .cornerRadius(19)
+                 .cornerRadius(19)
                     .overlay(RoundedRectangle(cornerRadius: 24)
                         .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
                        
-                    )
+                    ).padding(5)
 
                 
                 if let image = selectedImage {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 300, height: 80)
                 }
                 Image(systemName: "photo.on.rectangle")
                     .resizable()
@@ -121,17 +126,10 @@ struct Cree_evntView: View {
                         .cornerRadius(10)
                 }
                 .padding()
-            }
-            .navigationBarTitle("Créer un événement", displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark")
-                        .imageScale(.medium)
-                        .frame(width: 30, height: 30)
-                }
-            )
+            } .navigationBarTitle("Cree un Événement")
+            
+           
+          
         }
     }
 }

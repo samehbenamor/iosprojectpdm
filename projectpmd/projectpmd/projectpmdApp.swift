@@ -13,6 +13,7 @@ struct projectpmdApp: App {
         WindowGroup {
             //ContentView()
             Cree_evntView()
+            //Liste_evntView()
             
         }
     }
