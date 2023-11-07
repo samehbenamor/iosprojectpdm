@@ -44,6 +44,14 @@
 		507796242AF9208100A84051 /* projectpmdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectpmdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		507796282AF9208100A84051 /* projectpmdUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectpmdUITests.swift; sourceTree = "<group>"; };
 		5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectpmdUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5077963F2AF9311000A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
+		507796402AF9311000A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
+		507796412AF9311000A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
+		507796422AF9311000A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
+		507796452AF9324A00A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-BolIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
+		507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Reg.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
+		507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Bol.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
+		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,10 @@
 		507796012AF9208000A84051 = {
 			isa = PBXGroup;
 			children = (
+				507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */,
+				507796452AF9324A00A84051 /* NimbusSanL-BolIta.otf */,
+				507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */,
+				507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */,
 				5077960C2AF9208000A84051 /* projectpmd */,
 				5077961D2AF9208100A84051 /* projectpmdTests */,
 				507796272AF9208100A84051 /* projectpmdUITests */,
@@ -95,8 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				5077960D2AF9208000A84051 /* projectpmdApp.swift */,
-				5077960F2AF9208000A84051 /* ContentView.swift */,
-				507796112AF9208100A84051 /* Assets.xcassets */,
+				5077963E2AF9267E00A84051 /* Resources */,
+				5077963D2AF9267400A84051 /* Utils */,
+				5077963C2AF9266800A84051 /* Services */,
+				5077963A2AF9263A00A84051 /* ViewModels */,
+				507796382AF9261000A84051 /* Views */,
+				507796372AF925FC00A84051 /* Models */,
 				507796132AF9208100A84051 /* Preview Content */,
 			);
 			path = projectpmd;
@@ -125,6 +141,54 @@
 				5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */,
 			);
 			path = projectpmdUITests;
+			sourceTree = "<group>";
+		};
+		507796372AF925FC00A84051 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		507796382AF9261000A84051 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5077960F2AF9208000A84051 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5077963A2AF9263A00A84051 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5077963C2AF9266800A84051 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5077963D2AF9267400A84051 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5077963E2AF9267E00A84051 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				507796112AF9208100A84051 /* Assets.xcassets */,
+				5077963F2AF9311000A84051 /* NimbusSanL-Bol.otf */,
+				507796412AF9311000A84051 /* NimbusSanL-BolIta.otf */,
+				507796422AF9311000A84051 /* NimbusSanL-Reg.otf */,
+				507796402AF9311000A84051 /* NimbusSanL-RegIta.otf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
