@@ -87,48 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22AFDC2E2AFBE2770024919E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		22AFDC2F2AFBE2850024919E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		22AFDC302AFBE28E0024919E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		22AFDC312AFBE2960024919E /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		22AFDC322AFBE2A60024919E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		22AFDC332AFBE2B30024919E /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		507796012AF9208000A84051 = {
 			isa = PBXGroup;
 			children = (
@@ -156,12 +114,6 @@
 		5077960C2AF9208000A84051 /* projectpmd */ = {
 			isa = PBXGroup;
 			children = (
-				22AFDC332AFBE2B30024919E /* Services */,
-				22AFDC322AFBE2A60024919E /* Models */,
-				22AFDC312AFBE2960024919E /* ViewModels */,
-				22AFDC302AFBE28E0024919E /* Views */,
-				22AFDC2F2AFBE2850024919E /* Utils */,
-				22AFDC2E2AFBE2770024919E /* Resources */,
 				5077960D2AF9208000A84051 /* projectpmdApp.swift */,
 				5077963E2AF9267E00A84051 /* Resources */,
 				5077963D2AF9267400A84051 /* Utils */,
