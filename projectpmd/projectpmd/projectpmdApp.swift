@@ -11,7 +11,8 @@ import SwiftUI
 struct projectpmdApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingScreen()
+            //ContentView()
+            HomeScreen()
         }
     }
 }
