@@ -21,6 +21,8 @@ struct RegisterView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var isEditing = false
     var body: some View {
+        NavigationView {
+            ScrollView {
         ZStack() {
             Rectangle()
                 .foregroundColor(.clear)
@@ -172,13 +174,14 @@ struct RegisterView: View {
                     Text("Last Name")
                         .foregroundColor(.white)
                         .padding(.horizontal, 19)
-                    
+                        .zIndex(100)
                         .background(Color.clear)
                         .offset(x: 16, y: -8)
                 }
                 
                 DatePicker("", selection: $dateOfBirth, displayedComponents: .date)
                     .labelsHidden()
+                    .zIndex(100)
                     .datePickerStyle(WheelDatePickerStyle())
                     .frame(width: 402, height: 66)
                     .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
@@ -251,25 +254,38 @@ struct RegisterView: View {
                 Button(action: {
                     // Add the action you want the button to perform here
                 }) {
-                    Text("Se connecter")
+                    NavigationLink(destination: RoleView()) {
+                    Text("S'inscrire")
                         .font(Font.custom("Aksara Bali Galang", size: 24))
                         .foregroundColor(.white)
+                    }
                 }
                 .frame(width: 402, height: 66)
                 .background(Color(red: 0.06, green: 0.56, blue: 0.08))
                 .cornerRadius(19)
                 .offset(x: 0, y: 370)
-                
+                NavigationLink(destination: LoginView()) {
                 Text("Vous avez déjà un compte")
                     .font(Font.custom("Aksara Bali Galang", size: 20))
-                    .lineSpacing(48.50)
+               
                     .foregroundColor(Color(red: 0.90, green: 0.21, blue: 0.16))
                     .offset(x: 80, y: 430)
+                }
             }
+            
+            
         }
-        .frame(width: 430, height: 932)
+        .frame(width: 430, height: 850)
         .background(.white)
+                
     }
+            .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color(red: 0.98, green: 0.97, blue: 0.93))
+          
+        }
+        
+        
+    }
+    
 }
 
 struct RegisterView_Previews: PreviewProvider {

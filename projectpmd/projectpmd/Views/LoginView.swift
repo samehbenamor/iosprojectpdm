@@ -11,15 +11,22 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isEditing = false
+    @State private var isChecked: Bool = false
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
             ZStack() {
+                
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 430, height: 932)
                     .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26)  : Color(.white))
                     .offset(x: 0, y: 3)
+                Image(colorScheme == .dark ? "logo1" : "logo") // Use the image named "logo" from your assets
+                    .resizable()
+                    .frame(width: 404, height: 404)
+                    .opacity(0.2)
+                
                 Text("Se connecter")
                     .font(Font.custom("Aksara Bali Galang", size: 36))
                     .lineSpacing(100)
@@ -97,30 +104,60 @@ struct LoginView: View {
                 Button(action: {
                     // Add the action you want the button to perform here
                 }) {
-                    Text("Se connecter")
-                        .font(Font.custom("Aksara Bali Galang", size: 24))
-                        .foregroundColor(.white)
+                    NavigationLink(destination: UserProfileView()) {
+                        Text("Se connecter")
+                            .font(Font.custom("Aksara Bali Galang", size: 24))
+                            .foregroundColor(.white)
+                    }
                 }
                 .frame(width: 402, height: 66)
                 .background(Color(red: 0.06, green: 0.56, blue: 0.08))
                 .cornerRadius(19)
                 .offset(x: 0, y: 200)
+                Toggle("Remember me", isOn: $isChecked)
+                    .toggleStyle(iOSCheckboxToggleStyle())
+                    .foregroundColor(Color(red: 0.06, green: 0.56, blue: 0.08))
+                    .offset(x: -130, y: 68.5)
+                    .frame(width: 400)
                 
-                Text("Créer un nouveau compte")
-                    .font(Font.custom("Aksara Bali Galang", size: 20))
-                    .lineSpacing(48.50)
-                    .foregroundColor(Color(red: 0.90, green: 0.21, blue: 0.16))
-                    .offset(x: 0, y: 282)
+                
             }
             .frame(width: 430, height: 932)
             .background(.white)
         }
         
+        NavigationLink(destination: RegisterView()) {
+            Text("Créer un nouveau compte")
+                .font(Font.custom("Aksara Bali Galang", size: 20))
+                .lineSpacing(48.50)
+                .foregroundColor(Color(red: 0.90, green: 0.21, blue: 0.16))
+                .offset(x: 0, y: 282)
+        }
+        
     }
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+    }
+}
+struct iOSCheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        // 1
+        Button(action: {
+            
+            // 2
+            configuration.isOn.toggle()
+            
+        }, label: {
+            HStack {
+                // 3
+                Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                
+                configuration.label
+            }
+        })
     }
 }

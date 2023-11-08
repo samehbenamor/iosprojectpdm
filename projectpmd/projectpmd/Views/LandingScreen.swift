@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LandingScreen: View {
     @Environment(\.colorScheme) var colorScheme
+    @State private var isActive: Bool = false
     var body: some View {
         NavigationView {
             ZStack() {
@@ -18,7 +19,8 @@ struct LandingScreen: View {
                     .frame(width: 447, height: 404)
                 
                     .background(
-                        Image("logo") // Use the image named "logo" from your assets
+                        
+                        Image(colorScheme == .dark ? "logo1" : "logo") // Use the image named "logo" from your assets
                             .resizable()
                             .frame(width: 404, height: 404)
                         
@@ -38,15 +40,19 @@ struct LandingScreen: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                     .offset(x: 0, y: 226.50)
-                NavigationLink(destination: LoginView()) {
+                
                 Button(action: {
                     // Add the action you want the button to perform here
+               
                 }) {
+                    NavigationLink(destination: LoginView()) {
                     Text("Login")
                         .font(Font.custom("Aksara Bali Galang", size: 20))
                         .foregroundColor(.white)
+                    }
                 }
-                .foregroundColor(.clear)
+                
+                .zIndex(999)
                 .frame(width: 147, height: 55)
                 .background(Color(red: 0.36, green: 0.70, blue: 0.36))
                 .cornerRadius(41)
@@ -54,14 +60,16 @@ struct LandingScreen: View {
                 .shadow(
                     color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 7, y: 4
                 )
-                }
+                
                 
                 Button(action: {
                     // Add the action you want the button to perform here
                 }) {
+                    NavigationLink(destination: RegisterView()) {
                     Text("Register")
                         .font(Font.custom("Aksara Bali Galang", size: 20))
                         .foregroundColor(.black)
+                    }
                 }
                 .foregroundColor(.clear)
                 .frame(width: 147, height: 55)

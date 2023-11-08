@@ -10,16 +10,18 @@ import SwiftUI
 struct RoleView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
+        NavigationView {
         ZStack() {
             Button(action: {
                 // Add the action you want the button to perform here
             }) {
+                NavigationLink(destination: UserProfileView()) {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 430, height: 466)
                         .background(Color(red: 0.36, green: 0.70, blue: 0.36))
-                        .offset(x: 0, y: -233)
+                        .offset(x: 0, y: -250)
                     
                     VStack {
                         Text("Contributeur")
@@ -37,14 +39,16 @@ struct RoleView: View {
                     }
                 }
             }
+            }
 
             Button(action: {
                 // Add the action you want the button to perform here
             }) {
+                NavigationLink(destination: UserProfileView()) {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(width: 430, height: 466)
+                        .frame(width: 500, height: 400)
                         .background(Color(red: 0.90, green: 0.21, blue: 0.16))
                         .offset(x: 0, y: 233)
                     
@@ -64,6 +68,7 @@ struct RoleView: View {
                     }
                 }
             }
+            }
 
             Rectangle()
                 .foregroundColor(.clear)
@@ -80,6 +85,7 @@ struct RoleView: View {
         }
         .frame(width: 430, height: 932)
         .background(.white)
+    }
     }
 }
 
