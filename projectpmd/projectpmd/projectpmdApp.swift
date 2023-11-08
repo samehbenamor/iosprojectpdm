@@ -11,7 +11,10 @@ import SwiftUI
 struct projectpmdApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingScreen()
+            //ContentView()
+            Cree_evntView()
+            //Liste_evntView()
+            
         }
     }
 }
