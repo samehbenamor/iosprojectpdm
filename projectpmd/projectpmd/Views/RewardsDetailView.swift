@@ -44,7 +44,7 @@ struct RewardsDetailView: View {
                Alert(title: Text("Important message"), message: Text("recharge avec succee"), dismissButton: .default(Text("Got it!")))
          }
             
-        }
+        }.navigationBarBackButtonHidden(true)
         .navigationBarTitle("Reward Details")
         
      
