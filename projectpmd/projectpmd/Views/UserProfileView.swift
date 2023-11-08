@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 struct UserProfileView: View {
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack() {
             Group {
@@ -21,7 +22,7 @@ struct UserProfileView: View {
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 430, height: 750)
-                    .background(Color(red: 0.25, green: 0.24, blue: 0.26))
+                    .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color(red: 0.98, green: 0.97, blue: 0.93))
                     .cornerRadius(55)
                     .offset(x: 0, y: 91)
                 Ellipse()
@@ -30,7 +31,7 @@ struct UserProfileView: View {
                     .overlay(
                         Ellipse()
                             .inset(by: 3.50)
-                            .stroke(Color(red: 0.25, green: 0.24, blue: 0.26), lineWidth: 3.50)
+                            .stroke(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color(red: 0.98, green: 0.97, blue: 0.93))
                     )
                     .offset(x: 0.50, y: -284.50)
                 Rectangle()
@@ -58,7 +59,7 @@ struct UserProfileView: View {
                 ZStack() {
                     Text("Croissant Rouge")
                         .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: 2.92, y: -57.93)
                     Text("Organisateur")
                         .font(Font.custom("Nimbus Sans L", size: 24))
@@ -70,10 +71,11 @@ struct UserProfileView: View {
                         Image("Vector-6")
                                 .resizable()
                                 .frame(width: 28, height: 26)
+                              
                     }
                         .foregroundColor(.clear)
                         .frame(width: 55.79, height: 55.79)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(red: 0.85, green: 0.85, blue: 0.85))
                         .cornerRadius(30)
                         .offset(x: -148.40, y: 47.08)
                     Button(action: {
@@ -85,7 +87,7 @@ struct UserProfileView: View {
                     }
                         .foregroundColor(.clear)
                         .frame(width: 55.79, height: 55.79)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(red: 0.85, green: 0.85, blue: 0.85))
                         .cornerRadius(30)
                         .offset(x: -0.40, y: 51)
                     
@@ -98,7 +100,7 @@ struct UserProfileView: View {
                     }
                         .foregroundColor(.clear)
                         .frame(width: 55.79, height: 55.79)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(red: 0.85, green: 0.85, blue: 0.85))
                         .cornerRadius(30)
                         .offset(x: 148.40, y: 47.08)
                     
@@ -109,12 +111,12 @@ struct UserProfileView: View {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 138.43, height: 49.41)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(.white))
                         .cornerRadius(53)
                         .overlay(
                             RoundedRectangle(cornerRadius: 53)
-                                .inset(by: -1.50)
-                                .stroke(.white, lineWidth: 1.50)
+                              
+                                .stroke(.black, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
                     Image("Vector-3")
@@ -123,7 +125,7 @@ struct UserProfileView: View {
                                     .offset(x: -40, y: 1.09)
                     Text("Vérifié")
                         .font(Font.custom("Nimbus Sans L", size: 24).weight(.bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: 12.35, y: 1.09)
                 }
                 .frame(width: 138.43, height: 49.41)
@@ -132,17 +134,17 @@ struct UserProfileView: View {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 116.63, height: 49.41)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(.white))
                         .cornerRadius(53)
                         .overlay(
                             RoundedRectangle(cornerRadius: 53)
-                                .inset(by: -1.50)
-                                .stroke(.white, lineWidth: 1.50)
+                                
+                                .stroke(.black, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
                     Text("Admin")
                         .font(Font.custom("Nimbus Sans L", size: 24).weight(.bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: 14.17, y: 0.5)
                 }
                 .frame(width: 116.63, height: 49.41)
@@ -151,12 +153,12 @@ struct UserProfileView: View {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 50.50, height: 49.41)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(.white))
                         .cornerRadius(53)
                         .overlay(
                             RoundedRectangle(cornerRadius: 53)
-                                .inset(by: -1.50)
-                                .stroke(.white, lineWidth: 1.50)
+                                
+                                .stroke(.black, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
                     Image("Vector-4")
@@ -165,7 +167,7 @@ struct UserProfileView: View {
                                     .offset(x: -125, y: -1)
                     Text("+5")
                         .font(Font.custom("Nimbus Sans L", size: 24).weight(.bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: -1.45, y: -0)
                 }
                 .frame(width: 50.50, height: 49.41)
@@ -174,12 +176,12 @@ struct UserProfileView: View {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 204.56, height: 49.41)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(.white))
                         .cornerRadius(53)
                         .overlay(
                             RoundedRectangle(cornerRadius: 53)
-                                .inset(by: -1.50)
-                                .stroke(.white, lineWidth: 1.50)
+                                
+                                .stroke(.black, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
                     Image("Vector-5")
@@ -188,7 +190,7 @@ struct UserProfileView: View {
                                     .offset(x: -75, y: 1.09)
                     Text("Top contributeur")
                         .font(Font.custom("Nimbus Sans L", size: 20).weight(.bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: 18.35, y: -0)
                 }
                 .frame(width: 204.56, height: 49.41)
@@ -199,26 +201,28 @@ struct UserProfileView: View {
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 353, height: 200)
-                        .background(.black)
+                        .background(colorScheme == .dark ? Color(.black) : Color(.white))
                         .cornerRadius(34)
                         .overlay(
                             RoundedRectangle(cornerRadius: 34)
-                                .inset(by: -1.50)
-                                .stroke(.white, lineWidth: 1.50)
+                                
+                                .stroke(.black, lineWidth: 1.50)
                         )
                         .offset(x: 0, y: 0)
                     Text("Nous sommes Croissant rouge et nous acceptons volontiers vos dons.")
                         .font(Font.custom("Nimbus Sans L", size: 18).weight(.bold))
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: 0.38, y: -11.13)
                     Image("Vector-7")
                                     .resizable()
                                     .frame(width: 27, height: 27)
                                     .offset(x: -75, y: 70)
+                    
                     Image("Vector-8")
                                     .resizable()
                                     .frame(width: 27, height: 27)
                                     .offset(x: 0, y: 70)
+                    
                     Image("Vector-9")
                                     .resizable()
                                     .frame(width: 27, height: 27)

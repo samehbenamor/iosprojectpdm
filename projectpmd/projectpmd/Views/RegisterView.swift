@@ -18,13 +18,14 @@ struct RegisterView: View {
     @State private var selectedImage: Image? = nil
     @State private var isImagePickerPresented: Bool = false
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
     @State private var isEditing = false
     var body: some View {
         ZStack() {
             Rectangle()
                 .foregroundColor(.clear)
                 .frame(width: 430, height: 932)
-                .background(.white)
+                .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color(red: 0.98, green: 0.97, blue: 0.93))
                 .offset(x: 0, y: 3)
             Text("S'inscrire")
                 .font(Font.custom("Aksara Bali Galang", size: 36))
@@ -34,7 +35,7 @@ struct RegisterView: View {
             Text("Créez un compte pour explorer les différentes \n façons de contribuer à un meilleur environnement.")
                 .font(Font.custom("Aksara Bali Galang", size: 16))
                 .lineSpacing(10)
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                 .multilineTextAlignment(.center)
                 .offset(x: -0.50, y: -340)
             
@@ -226,7 +227,7 @@ struct RegisterView: View {
             ZStack(alignment: .leading) {
                 Text("Choisir photo de profile")
                     .font(Font.custom("Aksara Bali Galang", size: 18))
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                     .offset(x: 0, y: 290)
                 if let image = selectedImage {
                                     image
@@ -239,7 +240,7 @@ struct RegisterView: View {
                                 Image(systemName: "photo.on.rectangle")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 50)
+                                    .frame(width: 30, height: 30)
                                     .offset(x: 200, y: 290)
                                     .onTapGesture {
                                         isImagePickerPresented = true
