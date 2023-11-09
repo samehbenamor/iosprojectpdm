@@ -8,14 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960D2AF9208000A84051 /* projectpmdApp.swift */; };
+<<<<<<< HEAD
 		507796102AF9208000A84051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960F2AF9208000A84051 /* ContentView.swift */; };
+=======
+>>>>>>> origin/Tracking-and-Rewards
 		507796122AF9208100A84051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507796112AF9208100A84051 /* Assets.xcassets */; };
 		507796152AF9208100A84051 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507796142AF9208100A84051 /* Preview Assets.xcassets */; };
 		5077961F2AF9208100A84051 /* projectpmdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077961E2AF9208100A84051 /* projectpmdTests.swift */; };
 		507796292AF9208100A84051 /* projectpmdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507796282AF9208100A84051 /* projectpmdUITests.swift */; };
 		5077962B2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */; };
+<<<<<<< HEAD
 		B0D67B502AFA62650079AF80 /* Cree_evntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */; };
 		B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */; };
+=======
+		E4945F372AFB9D1600A0B6BA /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4945F362AFB9D1600A0B6BA /* TrackingView.swift */; };
+		E4945F412AFBBB2F00A0B6BA /* RewardsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4945F402AFBBB2F00A0B6BA /* RewardsDetailView.swift */; };
+		E4945F432AFBD88B00A0B6BA /* Rewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4945F422AFBD88B00A0B6BA /* Rewards.swift */; };
+>>>>>>> origin/Tracking-and-Rewards
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +47,10 @@
 /* Begin PBXFileReference section */
 		5077960A2AF9208000A84051 /* projectpmd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectpmd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5077960D2AF9208000A84051 /* projectpmdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectpmdApp.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		5077960F2AF9208000A84051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> origin/Tracking-and-Rewards
 		507796112AF9208100A84051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507796142AF9208100A84051 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5077961A2AF9208100A84051 /* projectpmdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projectpmdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,12 +62,22 @@
 		507796402AF9311000A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
 		507796412AF9311000A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
 		507796422AF9311000A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		507796452AF9324A00A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-BolIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
 		507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Reg.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
 		507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Bol.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
 		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
 		B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cree_evntView.swift; sourceTree = "<group>"; };
 		B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liste_evntView.swift; sourceTree = "<group>"; };
+=======
+		507796452AF9324A00A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-BolIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
+		507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-Reg.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
+		507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-Bol.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
+		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
+		E4945F362AFB9D1600A0B6BA /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
+		E4945F402AFBBB2F00A0B6BA /* RewardsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardsDetailView.swift; sourceTree = "<group>"; };
+		E4945F422AFBD88B00A0B6BA /* Rewards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rewards.swift; sourceTree = "<group>"; };
+>>>>>>> origin/Tracking-and-Rewards
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +179,15 @@
 		507796382AF9261000A84051 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				5077960F2AF9208000A84051 /* ContentView.swift */,
 				B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */,
 				B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */,
+=======
+				E4945F362AFB9D1600A0B6BA /* TrackingView.swift */,
+				E4945F422AFBD88B00A0B6BA /* Rewards.swift */,
+				E4945F402AFBBB2F00A0B6BA /* RewardsDetailView.swift */,
+>>>>>>> origin/Tracking-and-Rewards
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,8 +355,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				B0D67B502AFA62650079AF80 /* Cree_evntView.swift in Sources */,
 				507796102AF9208000A84051 /* ContentView.swift in Sources */,
+=======
+				E4945F412AFBBB2F00A0B6BA /* RewardsDetailView.swift in Sources */,
+				E4945F372AFB9D1600A0B6BA /* TrackingView.swift in Sources */,
+				E4945F432AFBD88B00A0B6BA /* Rewards.swift in Sources */,
+>>>>>>> origin/Tracking-and-Rewards
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
 				B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */,
 			);
