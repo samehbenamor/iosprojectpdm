@@ -20,7 +20,7 @@ struct LoginView: View {
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 430, height: 932)
-                    .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26)  : Color(.white))
+                    .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color(red: 0.98, green: 0.97, blue: 0.93))
                     .offset(x: 0, y: 3)
                 Image(colorScheme == .dark ? "logo1" : "logo") // Use the image named "logo" from your assets
                     .resizable()
@@ -114,11 +114,7 @@ struct LoginView: View {
                 .background(Color(red: 0.06, green: 0.56, blue: 0.08))
                 .cornerRadius(19)
                 .offset(x: 0, y: 200)
-                Toggle("Remember me", isOn: $isChecked)
-                    .toggleStyle(iOSCheckboxToggleStyle())
-                    .foregroundColor(Color(red: 0.06, green: 0.56, blue: 0.08))
-                    .offset(x: -130, y: 68.5)
-                    .frame(width: 400)
+               
                 
                 
             }
@@ -141,23 +137,5 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-    }
-}
-struct iOSCheckboxToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        // 1
-        Button(action: {
-            
-            // 2
-            configuration.isOn.toggle()
-            
-        }, label: {
-            HStack {
-                // 3
-                Image(systemName: configuration.isOn ? "checkmark.square" : "square")
-                
-                configuration.label
-            }
-        })
     }
 }

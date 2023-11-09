@@ -9,7 +9,10 @@ import SwiftUI
 import CoreData
 struct UserProfileView: View {
     @Environment(\.colorScheme) var colorScheme
+    @State private var isActionSheetPresented = false
+    @State private var isNavigatingToModifyProfile = false
     var body: some View {
+        
         ZStack() {
             Group {
                 Rectangle()
@@ -92,21 +95,27 @@ struct UserProfileView: View {
                         .offset(x: -0.40, y: 51)
                     
                     Button(action: {
-                        // Add the action you want the button to perform here
+                        
                     }) {
-                        Image("Vector-2")
+                        NavigationLink(destination: UserModifyProfile()) {
+                            Image("Vector-2")
                                 .resizable()
                                 .frame(width: 34, height: 8)
+                        }
                     }
                         .foregroundColor(.clear)
                         .frame(width: 55.79, height: 55.79)
                         .background(colorScheme == .dark ? Color(.black) : Color(red: 0.85, green: 0.85, blue: 0.85))
                         .cornerRadius(30)
+                        
+                      
                         .offset(x: 148.40, y: 47.08)
                     
                 }
+                
                 .frame(width: 352.59, height: 157.79)
                 .offset(x: 0.30, y: -40.11)
+                
                 ZStack() {
                     Rectangle()
                         .foregroundColor(.clear)
@@ -213,7 +222,11 @@ struct UserProfileView: View {
                         .font(Font.custom("Nimbus Sans L", size: 18).weight(.bold))
                         .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: 0.38, y: -11.13)
+                    //TODO
+                    //Add in the database for the user multiple choices of social media he can link and then test their existence, if they exist then show them on a hstack with a spacing. Reminder to add strings containing the user social medias on mongodb
+                    //make the user only able to fill his social mediasby editing his profile which i am about to do now
                     Image("Vector-7")
+                    
                                     .resizable()
                                     .frame(width: 27, height: 27)
                                     .offset(x: -75, y: 70)
@@ -242,3 +255,4 @@ struct UserProfileView_Previews: PreviewProvider {
         UserProfileView()
     }
 }
+

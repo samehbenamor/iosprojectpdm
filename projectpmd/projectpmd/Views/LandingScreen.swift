@@ -81,7 +81,7 @@ struct LandingScreen: View {
                 )
             }
             .frame(width: 430, height: 932)
-            .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color.white)
+            .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color(red: 0.98, green: 0.97, blue: 0.93))
             
         }
         

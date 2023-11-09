@@ -10,7 +10,7 @@ import SwiftUI
 struct RoleView: View {
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        NavigationView {
+       
         ZStack() {
             Button(action: {
                 // Add the action you want the button to perform here
@@ -85,7 +85,7 @@ struct RoleView: View {
         }
         .frame(width: 430, height: 932)
         .background(.white)
-    }
+    
     }
 }
 
