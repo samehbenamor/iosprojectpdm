@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42E866862AFEDAAD00A71D8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E866852AFEDAAD00A71D8B /* User.swift */; };
 		5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960D2AF9208000A84051 /* projectpmdApp.swift */; };
 		507796102AF9208000A84051 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960F2AF9208000A84051 /* UserProfileView.swift */; };
 		507796122AF9208100A84051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507796112AF9208100A84051 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42E866852AFEDAAD00A71D8B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../../../AgriConnect-Backend-Blog/Blogs/User.swift"; sourceTree = "<group>"; };
 		5077960A2AF9208000A84051 /* projectpmd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectpmd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5077960D2AF9208000A84051 /* projectpmdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectpmdApp.swift; sourceTree = "<group>"; };
 		5077960F2AF9208000A84051 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		507796372AF925FC00A84051 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42E866852AFEDAAD00A71D8B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				B0EFB7542AFA672300742C66 /* LandingScreen.swift in Sources */,
 				B0EFB7582AFA7D1300742C66 /* LoginView.swift in Sources */,
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
+				42E866862AFEDAAD00A71D8B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

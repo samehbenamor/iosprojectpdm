@@ -30,7 +30,7 @@ struct LandingScreen: View {
                 Text("Découvrez comment\nvous pouvez aider l'environnement")
                     .font(Font.custom("Aksara Bali Galang", size: 24))
                     .lineSpacing(5)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.center) 
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .foregroundColor(Color(red: 0.38, green: 0.69, blue: 0.35))
                     .offset(x: 0.50, y: 89)
