@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserMdpForgotInput: View {
+    
     @State private var email: String = ""
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
