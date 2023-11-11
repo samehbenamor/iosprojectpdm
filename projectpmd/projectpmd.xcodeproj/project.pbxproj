@@ -14,6 +14,7 @@
 		5077961F2AF9208100A84051 /* projectpmdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077961E2AF9208100A84051 /* projectpmdTests.swift */; };
 		507796292AF9208100A84051 /* projectpmdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507796282AF9208100A84051 /* projectpmdUITests.swift */; };
 		5077962B2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */; };
+		7AAC16492AFFDFA7004B955D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC16482AFFDFA7004B955D /* Login.swift */; };
 		7AB0E50E2AFFB54900ACAF07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E50D2AFFB54900ACAF07 /* User.swift */; };
 		7AB0E5112AFFBCB300ACAF07 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E5102AFFBCB300ACAF07 /* SignUp.swift */; };
 		7AB0E5142AFFBE2600ACAF07 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E5132AFFBE2600ACAF07 /* APIManager.swift */; };
@@ -58,6 +59,7 @@
 		507796402AF9311000A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
 		507796412AF9311000A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
 		507796422AF9311000A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
+		7AAC16482AFFDFA7004B955D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7AB0E50D2AFFB54900ACAF07 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7AB0E5102AFFBCB300ACAF07 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		7AB0E5132AFFBE2600ACAF07 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB0E5102AFFBCB300ACAF07 /* SignUp.swift */,
+				7AAC16482AFFDFA7004B955D /* Login.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				507796102AF9208000A84051 /* UserProfileView.swift in Sources */,
 				7AB0E5112AFFBCB300ACAF07 /* SignUp.swift in Sources */,
+				7AAC16492AFFDFA7004B955D /* Login.swift in Sources */,
 				B0EFB7562AFA724800742C66 /* RegisterView.swift in Sources */,
 				B08664AE2AFD260A0073F45A /* UserModifyProfile.swift in Sources */,
 				B08664AC2AFD1FA50073F45A /* PasswordReset.swift in Sources */,

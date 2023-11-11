@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 class SignUp: ObservableObject {
     // Bindable properties for user input
     @Published var fullname: String = ""
@@ -15,15 +17,30 @@ class SignUp: ObservableObject {
     @Published var dateofbirth: Date = Date() // Use dateofbirth property
     @Published var passwordVerify: String = ""
     @Published var signupError: String = ""
+    @Published var signedUp: Bool = false
     // Function to send signup request
+    private func validate() -> Bool {
+        // Check if all required fields are filled in and the passwords match.
+        if fullname.isEmpty || email.isEmpty || password.isEmpty || passwordVerify.isEmpty || password != passwordVerify {
+          return false
+        } else {
+          return true
+        }
+      }
     func signup() {
+        
+        if !validate() {
+              signupError = "Please fill in all required fields and make sure that the passwords match."
+              return
+            }
         // Create a JSON body
+        let dateOfBirthJSON: String = dateofbirth.formatted(.iso8601)
         let requestBody: [String: Any] = [
             "fullname": fullname,
             "email": email,
             "password": password,
             "role": role, // Include role in the JSON body
-            "dateofbirth": dateofbirth, // Use dateofbirth in the JSON body
+            "dateofbirth": dateOfBirthJSON, // Use dateofbirth in the JSON body
             // ... include other properties
         ]
 
@@ -34,6 +51,7 @@ class SignUp: ObservableObject {
                 // Handle the result (success or failure)
                 switch result {
                 case .success:
+                    self.signedUp = true
                     // Handle successful signup
                     self.signupError = "Signup Success"
                     print("Signup successful")

@@ -12,6 +12,13 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var isEditing = false
     @State private var isChecked: Bool = false
+    
+    
+    ///for the login logic
+    @ObservedObject var LoginViewModel: LoginViewModel
+    ///
+    
+
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
         NavigationView {
@@ -41,7 +48,7 @@ struct LoginView: View {
                 
                 
                 ZStack(alignment: .leading) {
-                    TextField("", text: $email, onEditingChanged: { editing in
+                    TextField("", text: $LoginViewModel.email, onEditingChanged: { editing in
                         withAnimation {
                             self.isEditing = editing
                         }
@@ -70,7 +77,7 @@ struct LoginView: View {
                 .offset(x: 0, y: -80)
                 
                 ZStack(alignment: .leading) {
-                    SecureField("", text: $password)
+                    SecureField("", text: $LoginViewModel.password)
                     
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                         .frame(width: 402, height: 66)
@@ -102,13 +109,13 @@ struct LoginView: View {
                     .foregroundColor(Color(red: 0.06, green: 0.56, blue: 0.08))
                     .offset(x: 119, y: 68.50)
                 Button(action: {
-                    // Add the action you want the button to perform here
+                    LoginViewModel.login()
                 }) {
-                    NavigationLink(destination: UserProfileView()) {
+                    //NavigationLink(destination: UserProfileView()) {
                         Text("Se connecter")
                             .font(Font.custom("Aksara Bali Galang", size: 24))
                             .foregroundColor(.white)
-                    }
+                    //}
                 }
                 .frame(width: 402, height: 66)
                 .background(Color(red: 0.06, green: 0.56, blue: 0.08))
@@ -122,7 +129,7 @@ struct LoginView: View {
             .background(.white)
         }
         
-        NavigationLink(destination: RegisterView()) {
+        NavigationLink(destination: RegisterView(signupviewModel: SignUp())) {
             Text("Créer un nouveau compte")
                 .font(Font.custom("Aksara Bali Galang", size: 20))
                 .lineSpacing(48.50)
@@ -136,6 +143,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(LoginViewModel: LoginViewModel())
     }
 }

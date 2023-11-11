@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LandingScreen: View {
+    
     @Environment(\.colorScheme) var colorScheme
     @State private var isActive: Bool = false
     var body: some View {
@@ -45,7 +46,7 @@ struct LandingScreen: View {
                     // Add the action you want the button to perform here
                
                 }) {
-                    NavigationLink(destination: LoginView()) {
+                    NavigationLink(destination: LoginView(LoginViewModel: LoginViewModel())) {
                     Text("Login")
                         .font(Font.custom("Aksara Bali Galang", size: 20))
                         .foregroundColor(.white)
@@ -65,7 +66,7 @@ struct LandingScreen: View {
                 Button(action: {
                     // Add the action you want the button to perform here
                 }) {
-                    NavigationLink(destination: RegisterView()) {
+                    NavigationLink(destination: RegisterView(signupviewModel: SignUp())) {
                     Text("Register")
                         .font(Font.custom("Aksara Bali Galang", size: 20))
                         .foregroundColor(.black)

@@ -36,7 +36,7 @@ struct EmailSent: View {
             Button(action: {
                 // Add the action you want the button to perform here
             }) {
-                NavigationLink(destination: LoginView()) {
+                NavigationLink(destination: LoginView(LoginViewModel: LoginViewModel())) {
                     Text("Login")
                         .font(Font.custom("Aksara Bali Galang", size: 24))
                         .foregroundColor(.white)

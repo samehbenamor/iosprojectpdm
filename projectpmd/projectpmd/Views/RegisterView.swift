@@ -2,12 +2,18 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @StateObject private var signupviewModel = SignUp()
+    //@StateObject private var signupviewModel = SignUp()
+    
     @State private var isImagePickerPresented: Bool = false
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
     @State private var isEditing = false
+    @State private var isDisabled: Bool = true
 
+    /// for the sign up
+    @ObservedObject var signupviewModel: SignUp
+    @State private var isErrorShowing = false
+    
     var body: some View {
         
         ScrollView {
@@ -108,7 +114,7 @@ struct RegisterView: View {
                  }*/
                 
                 Button(action: {
-                    SignUp()
+                    signupviewModel.signup()
                 }) {
                     Text("S'inscrire")
                         .font(Font.custom("Aksara Bali Galang", size: 24))
@@ -118,7 +124,16 @@ struct RegisterView: View {
                         .background(Color(red: 0.06, green: 0.56, blue: 0.08))
                         .cornerRadius(19)
                         .frame(width: 402, height: 50)
+                    if isErrorShowing {
+                        Text(signupviewModel.signupError)
+                            .foregroundColor(.red)
+                    }
+                    if signupviewModel.signedUp {
+                        NavigationLink(destination: LoginView(LoginViewModel: LoginViewModel())) {
+                        }
+                    }
                 }
+                
                 
                 
             
@@ -142,7 +157,7 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView(signupviewModel: SignUp())
     }
 }
 

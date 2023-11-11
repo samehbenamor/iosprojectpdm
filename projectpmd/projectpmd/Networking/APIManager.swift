@@ -8,16 +8,16 @@
 import Foundation
 class APIManager {
     static let shared = APIManager()
-
+    
     func signup(data: Data, completion: @escaping (Result<Void, Error>) -> Void) {
         // Replace the placeholder URL with your actual signup endpoint
         let url = URL(string: "http://localhost:9090/api/users/signup")!
-
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = data
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             // Handle the API response
             if let error = error {
@@ -27,4 +27,32 @@ class APIManager {
             }
         }.resume()
     }
+    
+    
+    
+    
+    
+    //private let loginURL = URL(string: "http://localhost:9090/api/users/signin")!
+    
+    func login(data: Data, completion: @escaping (Result<Data, Error>) -> Void) {
+        let url = URL(string: "http://localhost:9090/api/users/signin")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = data
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            // Handle the API response
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                
+                completion(.success(data!))
+            }
+        }.resume()
+    }
+    
 }
+    
+
