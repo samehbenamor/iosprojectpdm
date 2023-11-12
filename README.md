@@ -1,6 +1,6 @@
 # Ecolink
 
-![Project Logo]([Ecolink](https://i.imgur.com/i0b4i9f.png))
+![Project Logo](https://i.imgur.com/i0b4i9f.png)
 
 ![Swift](https://img.shields.io/badge/Swift-5.5-orange?style=flat-square) ![iOS](https://img.shields.io/badge/iOS-15.0-brightgreen?style=flat-square) ![SwiftUI](https://img.shields.io/badge/SwiftUI-2.0-blue?style=flat-square)
 
