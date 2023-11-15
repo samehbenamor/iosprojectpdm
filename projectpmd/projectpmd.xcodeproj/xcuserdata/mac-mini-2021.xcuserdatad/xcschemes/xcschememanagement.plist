@@ -4,11 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-<<<<<<<< Updated upstream:projectpmd/lesson.xcodeproj/xcuserdata/mac-mini-m1-2.xcuserdatad/xcschemes/xcschememanagement.plist
-		<key>lesson.xcscheme_^#shared#^_</key>
-========
 		<key>projectpmd.xcscheme_^#shared#^_</key>
->>>>>>>> Stashed changes:projectpmd/projectpmd.xcodeproj/xcuserdata/mac-mini-2021.xcuserdatad/xcschemes/xcschememanagement.plist
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>

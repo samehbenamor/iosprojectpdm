@@ -10,9 +10,11 @@
 		132A88982B03E70900CB38A5 /* lessonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132A88932B03E70900CB38A5 /* lessonApp.swift */; };
 		132A88992B03E70900CB38A5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132A88942B03E70900CB38A5 /* Persistence.swift */; };
 		132A889A2B03E70900CB38A5 /* DescriptionInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132A88952B03E70900CB38A5 /* DescriptionInputView.swift */; };
+		13975DFC2B04D671005AE8CB /* lesson.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13975DFA2B04D671005AE8CB /* lesson.xcdatamodeld */; };
+		13975DFE2B04D69E005AE8CB /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 13975DFD2B04D69E005AE8CB /* Preview Content */; };
+		13975E002B04D6A7005AE8CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13975DFF2B04D6A7005AE8CB /* Assets.xcassets */; };
 		13B0C82F2B0173D300F4A0E4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B0C82E2B0173D300F4A0E4 /* Comment.swift */; };
 		13B139482B03D33A008E461B /* testdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B139472B03D33A008E461B /* testdata.swift */; };
-		13C332A52B03A3F900B971AE /* lesson.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 13C3329F2B03A3F900B971AE /* lesson.xcdatamodeld */; };
 		13D68E462B03C59800EE910A /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D68E452B03C59800EE910A /* LessonViewModel.swift */; };
 		13D68E482B03C5EA00EE910A /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D68E472B03C5EA00EE910A /* Lesson.swift */; };
 		13D68E4A2B03C68500EE910A /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D68E492B03C68500EE910A /* VideoListViewModel.swift */; };
@@ -57,9 +59,11 @@
 		132A88932B03E70900CB38A5 /* lessonApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lessonApp.swift; sourceTree = "<group>"; };
 		132A88942B03E70900CB38A5 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		132A88952B03E70900CB38A5 /* DescriptionInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionInputView.swift; sourceTree = "<group>"; };
+		13975DFB2B04D671005AE8CB /* lesson.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lesson.xcdatamodel; sourceTree = "<group>"; };
+		13975DFD2B04D69E005AE8CB /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
+		13975DFF2B04D6A7005AE8CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B0C82E2B0173D300F4A0E4 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		13B139472B03D33A008E461B /* testdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testdata.swift; sourceTree = "<group>"; };
-		13C332A02B03A3F900B971AE /* lesson.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = lesson.xcdatamodel; sourceTree = "<group>"; };
 		13D68E452B03C59800EE910A /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
 		13D68E472B03C5EA00EE910A /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		13D68E492B03C68500EE910A /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
@@ -179,7 +183,9 @@
 		507796382AF9261000A84051 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				13C3329F2B03A3F900B971AE /* lesson.xcdatamodeld */,
+				13975DFF2B04D6A7005AE8CB /* Assets.xcassets */,
+				13975DFD2B04D69E005AE8CB /* Preview Content */,
+				13975DFA2B04D671005AE8CB /* lesson.xcdatamodeld */,
 				132A88952B03E70900CB38A5 /* DescriptionInputView.swift */,
 				132A88932B03E70900CB38A5 /* lessonApp.swift */,
 				132A88942B03E70900CB38A5 /* Persistence.swift */,
@@ -355,7 +361,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13975DFE2B04D69E005AE8CB /* Preview Content in Resources */,
 				507796152AF9208100A84051 /* Preview Assets.xcassets in Resources */,
+				13975E002B04D6A7005AE8CB /* Assets.xcassets in Resources */,
 				507796122AF9208100A84051 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,8 +398,8 @@
 				132A889A2B03E70900CB38A5 /* DescriptionInputView.swift in Sources */,
 				132A88992B03E70900CB38A5 /* Persistence.swift in Sources */,
 				B08664AC2AFD1FA50073F45A /* PasswordReset.swift in Sources */,
+				13975DFC2B04D671005AE8CB /* lesson.xcdatamodeld in Sources */,
 				13B139482B03D33A008E461B /* testdata.swift in Sources */,
-				13C332A52B03A3F900B971AE /* lesson.xcdatamodeld in Sources */,
 				B08664A82AFD1A3B0073F45A /* UserMdpForgotInput.swift in Sources */,
 				B08664AA2AFD1EA80073F45A /* EmailSent.swift in Sources */,
 				B0EFB7542AFA672300742C66 /* LandingScreen.swift in Sources */,
@@ -560,7 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"projectpmd/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"projectpmd/Views/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -588,7 +596,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"projectpmd/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"projectpmd/Views/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -723,14 +731,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		13C3329F2B03A3F900B971AE /* lesson.xcdatamodeld */ = {
+		13975DFA2B04D671005AE8CB /* lesson.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				13C332A02B03A3F900B971AE /* lesson.xcdatamodel */,
+				13975DFB2B04D671005AE8CB /* lesson.xcdatamodel */,
 			);
-			currentVersion = 13C332A02B03A3F900B971AE /* lesson.xcdatamodel */;
-			name = lesson.xcdatamodeld;
-			path = "../../../../../Downloads/iosprojectpdm-lesson-2/projectpmd/lesson/lesson.xcdatamodeld";
+			currentVersion = 13975DFB2B04D671005AE8CB /* lesson.xcdatamodel */;
+			path = lesson.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

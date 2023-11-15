@@ -9,7 +9,6 @@ import UniformTypeIdentifiers
 struct VideoListView: View {
     @ObservedObject var viewModel = LessonViewModel()
     @State private var isAddLessonPresented = false
-    @State private var newLesson: Lesson?
 
     var body: some View {
         NavigationView {
@@ -35,39 +34,29 @@ struct VideoListView: View {
                     .foregroundColor(.blue)
                     .padding()
                 }
-                .sheet(isPresented: $isAddLessonPresented, onDismiss: {
-                    if let addedLesson = viewModel.lessons.last {
-                        newLesson = addedLesson
-                    }
-                }) {
+                .sheet(isPresented: $isAddLessonPresented) {
                     AddVideoView(isAddLessonPresented: $isAddLessonPresented) {
                         viewModel.fetchLessons()
                     }
                 }
             }
             .navigationBarTitle("Lesson List")
-            .onAppear {
-                viewModel.fetchLessons()
+        }
+        .onChange(of: viewModel.lessons) { newLessons in
+            if let addedLesson = newLessons.last {
+                NavigationLink(
+                    destination: VideoDetailView(lesson: addedLesson),
+                    isActive: .constant(true)
+                ) {
+                    EmptyView()
+                }
             }
         }
-        .background(
-            NavigationLink(
-                destination: VideoDetailView(lesson: newLesson ?? Lesson(id: "", name: "", description: "", video: "")),
-                isActive: .constant(true)
-            ) {
-                EmptyView()
-            }
-
-
-        )
     }
 }
 
 
-<<<<<<< Updated upstream:projectpmd/lesson/lessonApp.swift
-@main
-struct lessonApp: App {
-=======
+
 
 struct AddVideoView: View {
     @State private var name = ""
@@ -314,7 +303,6 @@ struct VideoCell: View {
 
 
 struct VideoApp: App {
->>>>>>> Stashed changes:projectpmd/projectpmd/Views/lessonApp.swift
     var body: some Scene {
         WindowGroup {
             VideoListView()
