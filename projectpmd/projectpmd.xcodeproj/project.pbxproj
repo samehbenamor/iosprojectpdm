@@ -14,6 +14,7 @@
 		5077961F2AF9208100A84051 /* projectpmdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077961E2AF9208100A84051 /* projectpmdTests.swift */; };
 		507796292AF9208100A84051 /* projectpmdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507796282AF9208100A84051 /* projectpmdUITests.swift */; };
 		5077962B2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */; };
+		88D081732B0550CA004C9716 /* PaiementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D081722B0550CA004C9716 /* PaiementView.swift */; };
 		B00917722AFBF9FC008F477A /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00917712AFBF9FC008F477A /* DetailScreen.swift */; };
 		B0CA5CC92AFB00FE008B89BF /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CA5CC82AFB00FE008B89BF /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Reg.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
 		507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Bol.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
 		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
+		88D081722B0550CA004C9716 /* PaiementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaiementView.swift; sourceTree = "<group>"; };
 		B00917712AFBF9FC008F477A /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		B0CA5CC82AFB00FE008B89BF /* HomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 				B0CA5CC82AFB00FE008B89BF /* HomeScreen.swift */,
 				5077960F2AF9208000A84051 /* ContentView.swift */,
 				B00917712AFBF9FC008F477A /* DetailScreen.swift */,
+				88D081722B0550CA004C9716 /* PaiementView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				B00917722AFBF9FC008F477A /* DetailScreen.swift in Sources */,
 				507796102AF9208000A84051 /* ContentView.swift in Sources */,
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
+				88D081732B0550CA004C9716 /* PaiementView.swift in Sources */,
 				B0CA5CC92AFB00FE008B89BF /* HomeScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
