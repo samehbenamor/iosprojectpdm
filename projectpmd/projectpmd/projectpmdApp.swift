@@ -12,8 +12,9 @@ struct projectpmdApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            Cree_evntView()
-            //Liste_evntView()
+         //Cree_evntView()
+            Liste_evntView()
+          
             
         }
     }

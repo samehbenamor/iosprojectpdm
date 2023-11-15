@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Event: Identifiable {
+struct Evente: Identifiable {
     let id = UUID()
     let title: String
     let image: String
@@ -9,10 +9,11 @@ struct Event: Identifiable {
 }
 struct EventDetailView: View {
     @State private var isInterestedAlertPresented = false
-    let event: Event
+    @State private var myEvents: [Evente] = [] // Liste de vos événements
+    let event: Evente
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5)]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [Color.clear]), startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea()
             .overlay(
                 ScrollView {
@@ -30,26 +31,31 @@ struct EventDetailView: View {
                         Text("Heure de début : \(event.startheur)")
                             
                         Text("2k participants").padding(20)
-                        Button(action: {
-                            isInterestedAlertPresented = true
-                        }) {
-                            HStack {
-                                Image(systemName: "icon")
-                                    .foregroundColor(.white)
 
-                                Text("Intéressé(e)")
-                                    .font(.headline)
-                                    .padding(20)
-                            }
-                                .font(.headline)
-                                .padding(20)
-                                .background(Color(red: 0.36, green: 0.7, blue: 0.36))
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                
-                        } .alert(isPresented: $isInterestedAlertPresented) {
-                            Alert(title: Text("Message d'intérêt"), message: Text("Vous êtes intéressé(e) par cet événement."), dismissButton: .default(Text("OK")))
-                        }
+
+                        Button(action: {
+                                                    // Ajoutez l'événement à votre liste d'événements locale
+                                                    myEvents.append(event)
+                                                    isInterestedAlertPresented = true
+                                                }) {
+                                                    HStack {
+                                                        Image(systemName: "heart.fill")
+                                                            .foregroundColor(.white)
+
+                                                        Text("Intéressé(e)")
+                                                            .font(.headline)
+                                                            .padding(20)
+                                                    }
+                                                    .font(.headline)
+                                                    .padding(20)
+                                                    .background(Color(red: 0.36, green: 0.7, blue: 0.36))
+                                                    .foregroundColor(.white)
+                                                    .cornerRadius(10)
+                                                }
+                                                .alert(isPresented: $isInterestedAlertPresented) {
+                                                    Alert(title: Text("Message d'intérêt"), message: Text("Vous avez ajouté cet événement à vos favoris."), dismissButton: .default(Text("OK")))
+                                                }
+
                         
                         Text("Ajoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoinAjoutez plus de détails de l'événement ici au besoin")
                             .padding()
@@ -60,15 +66,14 @@ struct EventDetailView: View {
     }
 }
 
-
 struct Liste_evntView: View {
-    let events: [Event] = [
-        Event(title: "Événement 1", image: "image", startDate: Date(), startheur: "10:00 AM"),
-        Event(title: "Événement 2", image: "image2", startDate: Date().addingTimeInterval(7200), startheur: "2:30 PM"),
-        Event(title: "Événement 3", image: "image3", startDate: Date().addingTimeInterval(7200), startheur: "3:30 PM"),
-        Event(title: "Événement 4", image: "image6", startDate: Date().addingTimeInterval(7200), startheur: "5:30 PM"),
-        Event(title: "Événement 5", image: "image5", startDate: Date().addingTimeInterval(7200), startheur: "1:30 PM"),
-        Event(title: "Événement 6", image: "image2", startDate: Date().addingTimeInterval(7200), startheur: "12:00 PM"),
+    let events: [Evente] = [
+        Evente(title: "Événement 1", image: "image", startDate: Date(), startheur: "10:00 AM"),
+        Evente(title: "Événement 2", image: "image2", startDate: Date().addingTimeInterval(7200), startheur: "2:30 PM"),
+        Evente(title: "Événement 3", image: "image3", startDate: Date().addingTimeInterval(7200), startheur: "3:30 PM"),
+        Evente(title: "Événement 4", image: "image6", startDate: Date().addingTimeInterval(7200), startheur: "5:30 PM"),
+        Evente(title: "Événement 5", image: "image5", startDate: Date().addingTimeInterval(7200), startheur: "1:30 PM"),
+        Evente(title: "Événement 6", image: "image2", startDate: Date().addingTimeInterval(7200), startheur: "12:00 PM"),
     ]
     
     var body: some View {
@@ -95,8 +100,29 @@ struct Liste_evntView: View {
                 .overlay(RoundedRectangle(cornerRadius: 24)
                     .stroke(Color(red: 0.06, green: 0.56, blue: 0.08), lineWidth: 4)
                 ) .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-                    .navigationBarTitle("Liste des Événements")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle("Liste des Événements", displayMode: .inline)
+                    .navigationBarItems(trailing:
+                        HStack {
+                            NavigationLink(destination: MyEventsView()) {
+                                Image(systemName: "heart.fill")
+                                    .foregroundColor(.white)
+                                    .padding(8)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(Color(red: 0.36, green: 0.7, blue: 0.36)))
+                            }
+                            
+                        NavigationLink(destination: Cree_evntView()){
+                                Image(systemName: "plus.circle.fill")
+                                    .foregroundColor(.white)
+                                    .padding(8)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(Color(red: 0.36, green: 0.7, blue: 0.36)))
+                            }
+                        }
+                    )
+
+
             }
+           
            
         }
     }
