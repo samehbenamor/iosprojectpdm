@@ -11,10 +11,22 @@ struct UserProfileView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var isActionSheetPresented = false
     @State private var isNavigatingToModifyProfile = false
+    @ObservedObject var viewModel = UserProfileViewModel()
+    
+    ///
+    ///
+    let userFullName = UserDefaults.standard.object(forKey: "userFullName") as? String
+
+    let userEmail = UserDefaults.standard.object(forKey: "userEmail") as? String
+    let userRoleString = UserDefaults.standard.object(forKey: "userRole") as? String
+    ///
+    ///
     var body: some View {
         
         ZStack() {
+           
             Group {
+                
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 430, height: 932)
@@ -59,15 +71,25 @@ struct UserProfileView: View {
                 }
                 .frame(width: 102, height: 28.84)
                 .offset(x: 0, y: -165.58)
-                ZStack() {
-                    Text("Croissant Rouge")
-                        .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
-                        .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
-                        .offset(x: 2.92, y: -57.93)
-                    Text("Organisateur")
-                        .font(Font.custom("Nimbus Sans L", size: 24))
-                        .foregroundColor(Color(red: 0.90, green: 0.21, blue: 0.16))
-                        .offset(x: 4.56, y: -9.07)
+                
+                    ZStack() {
+                        if let userFullName = userFullName {
+                            Text(userFullName)
+                                .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
+                                .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
+                                .offset(x: 2.92, y: -57.93)
+                        } else {
+                            // Handle the case where the user's full name is nil
+                            Text("test")
+                        }
+                        if let userRoleString = userRoleString {
+                        Text(userRoleString)
+                            .font(Font.custom("Nimbus Sans L", size: 24))
+                            .foregroundColor(Color(red: 0.90, green: 0.21, blue: 0.16))
+                            .offset(x: 4.56, y: -9.07)
+                        } else {
+                            Text("No user role found")
+                        }
                     Button(action: {
                         // Add the action you want the button to perform here
                     }) {
@@ -241,13 +263,19 @@ struct UserProfileView: View {
                                     .frame(width: 27, height: 27)
                                     .offset(x: 75, y: 70)
                 }
+                
                 .frame(width: 353, height: 213.33)
                 .offset(x: 0.50, y: 322.67)
             
         }
         .frame(width: 430, height: 932)
         .background(.white)
+        .onAppear {
+                    // Optionally, trigger authentication when the view appears
+                    viewModel.authenticateUserProfile()
+                }
     }
+    
 }
 
 struct UserProfileView_Previews: PreviewProvider {

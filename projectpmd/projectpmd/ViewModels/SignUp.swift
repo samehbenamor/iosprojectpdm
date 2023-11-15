@@ -18,6 +18,8 @@ class SignUp: ObservableObject {
     @Published var passwordVerify: String = ""
     @Published var signupError: String = ""
     @Published var signedUp: Bool = false
+    @Published var isLoading: Bool = false
+    @Published var isNavigationActive: Bool = false
     // Function to send signup request
     private func validate() -> Bool {
         // Check if all required fields are filled in and the passwords match.
@@ -28,7 +30,9 @@ class SignUp: ObservableObject {
         }
       }
     func signup() {
-        
+        DispatchQueue.main.async {
+            self.isLoading = true // Show loading view
+                 }
         if !validate() {
               signupError = "Please fill in all required fields and make sure that the passwords match."
               return
@@ -59,6 +63,10 @@ class SignUp: ObservableObject {
                     // Handle signup failure
                     self.signupError = "Signup failed: \(error.localizedDescription)"
                     print("Signup failed: \(error.localizedDescription)")
+                }
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.isNavigationActive = true
                 }
             }
         }
