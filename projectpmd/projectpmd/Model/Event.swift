@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 //
 //  Event.swift
 //  projectpmd
@@ -15,6 +16,8 @@ struct Event {
     var whatsappLink: String
     var selectedImage: String
 =======
+=======
+>>>>>>> Stashed changes
 import Foundation
 
 struct Event: Codable, Identifiable {
@@ -38,5 +41,8 @@ struct Event: Codable, Identifiable {
     static func == (lhs: Event, rhs: Event) -> Bool {
         return lhs.id == rhs.id
     }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

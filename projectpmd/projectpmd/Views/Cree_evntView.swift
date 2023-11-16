@@ -1,6 +1,7 @@
 import SwiftUI
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 struct Cree_evntView: View {
     @State private var eventName = ""
     @State private var showDatePicker = false
@@ -40,6 +41,8 @@ struct Cree_evntView: View {
             Button("Create Event") {
                             createEvent()
 =======
+=======
+>>>>>>> Stashed changes
 
 struct Cree_evntView: View {
     
@@ -76,6 +79,9 @@ struct Cree_evntView: View {
             Button("Create Event") {
                             viewModel.createEvent(event: event)
                             showAlert = true // Show the alert when the button is pressed
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                         }
                         .font(.headline)
@@ -83,6 +89,7 @@ struct Cree_evntView: View {
                         .background(Color(red: 0.36, green: 0.7, blue: 0.36))
                         .foregroundColor(.white)
                         .cornerRadius(10)
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                         .alert(isPresented: $showMessage) {
                             Alert(title: Text("Event Creation"), message: Text(message), dismissButton: .default(Text("OK")) {
@@ -115,6 +122,8 @@ struct Cree_evntView: View {
         let jsonData = try! JSONSerialization.data(withJSONObject: body)
 
 =======
+=======
+>>>>>>> Stashed changes
                         .alert(isPresented: $showAlert) {
                             Alert(
                                 title: Text("Create Another Event?"),
@@ -145,13 +154,20 @@ class Cree_evntViewModel: ObservableObject {
             return
         }
         
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+        
+>>>>>>> Stashed changes
 =======
         
 >>>>>>> Stashed changes
@@ -168,6 +184,7 @@ class Cree_evntViewModel: ObservableObject {
     }
     func resetForm() {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
            // Réinitialisez les valeurs de vos champs ici
            eventName = ""
            eventDate = Date()
@@ -183,6 +200,8 @@ struct Cree_evntView_Previews: PreviewProvider {
     static var previews: some View {
         Cree_evntView()
 =======
+=======
+>>>>>>> Stashed changes
         DispatchQueue.main.async {
             self.events.append(self.event)
             self.event.eventName = ""
@@ -197,6 +216,9 @@ struct Cree_evntView_Previews: PreviewProvider {
         static var previews: some View {
             Cree_evntView()
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

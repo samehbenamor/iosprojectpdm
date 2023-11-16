@@ -34,6 +34,7 @@ struct EventDetailView: View {
                         Text("2k participants").padding(20)
 
 
+<<<<<<< Updated upstream
                         Button(action: {
                                                     // Ajoutez l'événement à votre liste d'événements locale
                                                     myEvents.append(event)
@@ -131,6 +132,11 @@ struct Liste_evntView: View {
 class Liste_eventViewModel: ObservableObject {
     @Published var events: [Event] = []
 
+=======
+class Liste_eventViewModel: ObservableObject {
+    @Published var events: [Event] = []
+
+>>>>>>> Stashed changes
     func fetchEvents() {
         guard let url = URL(string: "http://localhost:5000/api/evenements") else {
             print("URL invalide")
@@ -218,10 +224,13 @@ struct Liste_eventView: View {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Liste_evntView()
 =======
+=======
+>>>>>>> Stashed changes
 struct DetailEventView: View {
     let event: Event
     @State private var isInterested = false
@@ -275,6 +284,9 @@ struct DetailEventView: View {
 struct Liste_eventView_Previews: PreviewProvider {
     static var previews: some View {
         Liste_eventView()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     }
 }

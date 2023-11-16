@@ -20,6 +20,9 @@ struct projectpmdApp: App {
             //Cree_evntView()
              //List_eventView()
             Liste_eventView()
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             
         }
