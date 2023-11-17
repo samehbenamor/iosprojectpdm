@@ -7,19 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-		430A9DB82B02AD15000FF629 /* myEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A9DB72B02AD15000FF629 /* myEventsView.swift */; };
-		43C43BDD2B043EE9007C5AAD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C43BDC2B043EE9007C5AAD /* Event.swift */; };
-		43C43BDF2B043F28007C5AAD /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C43BDE2B043F28007C5AAD /* EventViewModel.swift */; };
-=======
 		4340E6AF2B05BAB3001B8CF5 /* FavoriteEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4340E6AE2B05BAB3001B8CF5 /* FavoriteEventsView.swift */; };
 		43C43BDD2B043EE9007C5AAD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C43BDC2B043EE9007C5AAD /* Event.swift */; };
->>>>>>> Stashed changes
-=======
-		4340E6AF2B05BAB3001B8CF5 /* FavoriteEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4340E6AE2B05BAB3001B8CF5 /* FavoriteEventsView.swift */; };
-		43C43BDD2B043EE9007C5AAD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C43BDC2B043EE9007C5AAD /* Event.swift */; };
->>>>>>> Stashed changes
 		5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960D2AF9208000A84051 /* projectpmdApp.swift */; };
 		507796102AF9208000A84051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960F2AF9208000A84051 /* ContentView.swift */; };
 		507796122AF9208100A84051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507796112AF9208100A84051 /* Assets.xcassets */; };
@@ -49,19 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-		430A9DB72B02AD15000FF629 /* myEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myEventsView.swift; sourceTree = "<group>"; };
-		43C43BDC2B043EE9007C5AAD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		43C43BDE2B043F28007C5AAD /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventViewModel.swift; path = projectpmd/Model/EventViewModel.swift; sourceTree = SOURCE_ROOT; };
-=======
 		4340E6AE2B05BAB3001B8CF5 /* FavoriteEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsView.swift; sourceTree = "<group>"; };
 		43C43BDC2B043EE9007C5AAD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
-=======
-		4340E6AE2B05BAB3001B8CF5 /* FavoriteEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEventsView.swift; sourceTree = "<group>"; };
-		43C43BDC2B043EE9007C5AAD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		5077960A2AF9208000A84051 /* projectpmd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectpmd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5077960D2AF9208000A84051 /* projectpmdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectpmdApp.swift; sourceTree = "<group>"; };
 		5077960F2AF9208000A84051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -187,15 +165,7 @@
 				5077960F2AF9208000A84051 /* ContentView.swift */,
 				B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */,
 				B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-				430A9DB72B02AD15000FF629 /* myEventsView.swift */,
-=======
 				4340E6AE2B05BAB3001B8CF5 /* FavoriteEventsView.swift */,
->>>>>>> Stashed changes
-=======
-				4340E6AE2B05BAB3001B8CF5 /* FavoriteEventsView.swift */,
->>>>>>> Stashed changes
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,7 +173,6 @@
 		5077963A2AF9263A00A84051 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				43C43BDE2B043F28007C5AAD /* EventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -365,25 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0D67B502AFA62650079AF80 /* Cree_evntView.swift in Sources */,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-				430A9DB82B02AD15000FF629 /* myEventsView.swift in Sources */,
-				507796102AF9208000A84051 /* ContentView.swift in Sources */,
-				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
-				43C43BDD2B043EE9007C5AAD /* Event.swift in Sources */,
-				43C43BDF2B043F28007C5AAD /* EventViewModel.swift in Sources */,
-=======
 				507796102AF9208000A84051 /* ContentView.swift in Sources */,
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
 				4340E6AF2B05BAB3001B8CF5 /* FavoriteEventsView.swift in Sources */,
 				43C43BDD2B043EE9007C5AAD /* Event.swift in Sources */,
->>>>>>> Stashed changes
-=======
-				507796102AF9208000A84051 /* ContentView.swift in Sources */,
-				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
-				4340E6AF2B05BAB3001B8CF5 /* FavoriteEventsView.swift in Sources */,
-				43C43BDD2B043EE9007C5AAD /* Event.swift in Sources */,
->>>>>>> Stashed changes
 				B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

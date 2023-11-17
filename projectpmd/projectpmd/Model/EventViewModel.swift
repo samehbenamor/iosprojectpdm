@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-import Foundation
-=======
 /*import Foundation
->>>>>>> Stashed changes
 
 class EventViewModel: ObservableObject {
     @Published var event = Event(name: "", date: Date(), location: "", description: "", whatsappLink: "", selectedImage: "")
@@ -25,7 +21,4 @@ class EventViewModel: ObservableObject {
         event = Event(name: "", date: Date(), location: "", description: "", whatsappLink: "", selectedImage: "")
     }
 }
-<<<<<<< Updated upstream
-=======
 */
->>>>>>> Stashed changes

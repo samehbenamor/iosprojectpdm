@@ -1,23 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-//
-//  Event.swift
-//  projectpmd
-//
-//  Created by Mac-Mini-2021 on 15/11/2023.
-//
-
-import Foundation
-struct Event {
-    var name: String
-    var date: Date
-    var location: String
-    var description: String
-    var whatsappLink: String
-    var selectedImage: String
-=======
-=======
->>>>>>> Stashed changes
 import Foundation
 
 struct Event: Codable, Identifiable {
@@ -41,8 +21,4 @@ struct Event: Codable, Identifiable {
     static func == (lhs: Event, rhs: Event) -> Bool {
         return lhs.id == rhs.id
     }
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
