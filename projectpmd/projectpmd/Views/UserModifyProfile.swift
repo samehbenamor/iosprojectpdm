@@ -8,17 +8,8 @@
 import SwiftUI
 
 struct UserModifyProfile: View {
-    @State private var email: String = ""
-    @State private var location: String = ""
-   
-    @State private var fullName: String = ""
-    @State private var Bio: String = ""
-    // Social medias
-    @State private var facebook: String = ""
-    @State private var instagram: String = ""
-    @State private var linkedin: String = ""
-    //
-    @State private var phoneNumber: String = ""
+    
+    @ObservedObject var viewModel: UserModifyViewModel
 
     @State private var selectedImage: Image? = nil
     @State private var isImagePickerPresented: Bool = false
@@ -37,7 +28,7 @@ struct UserModifyProfile: View {
                 
                 
                 
-                TextField("Email", text: $email)
+                TextField("Email", text: $viewModel.email)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -48,7 +39,7 @@ struct UserModifyProfile: View {
                     .foregroundColor(.white)
                     .cornerRadius(19)
                 
-                TextField("Profile bio", text: $Bio)
+                TextField("Profile bio", text: $viewModel.Bio)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -59,7 +50,7 @@ struct UserModifyProfile: View {
                     .foregroundColor(.white)
                     .cornerRadius(19)
                 
-                TextField("Full Name", text: $fullName)
+                TextField("Full Name", text: $viewModel.fullName)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -69,7 +60,7 @@ struct UserModifyProfile: View {
                     .foregroundColor(.white)
                     .cornerRadius(19)
               
-                TextField("Location", text: $location)
+                TextField("Location", text: $viewModel.location)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -78,17 +69,7 @@ struct UserModifyProfile: View {
                     .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
                     .foregroundColor(.white)
                     .cornerRadius(19)
-                TextField("Facebook", text: $facebook)
-                
-                    .padding(.horizontal)
-                    .foregroundColor(.white)
-                
-                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                    .frame(width: 402, height: 50)
-                    .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
-                    .foregroundColor(.white)
-                    .cornerRadius(19)
-                TextField("Instagram", text: $instagram)
+                TextField("Facebook", text: $viewModel.facebook)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -98,7 +79,7 @@ struct UserModifyProfile: View {
                     .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
                     .foregroundColor(.white)
                     .cornerRadius(19)
-                TextField("Linkedin", text: $linkedin)
+                TextField("Instagram", text: $viewModel.instagram)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -108,7 +89,8 @@ struct UserModifyProfile: View {
                     .background(Color(red: 0.36, green: 0.70, blue: 0.36).opacity(0.5))
                     .foregroundColor(.white)
                     .cornerRadius(19)
-                TextField("Phone number", text: $phoneNumber)
+               
+                TextField("Phone number", text: $viewModel.phoneNumber)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -163,23 +145,7 @@ struct UserModifyProfile: View {
                 }
             }
             .padding(.bottom, 20)
-            Button(action: {
-                // Add any action you want to perform here
-                // This can be empty if you don't need to perform any additional action
-            }) {
-                NavigationLink(destination: UserProfileView()) {
-                    Text("Modifier profile")
-                        .font(Font.custom("Aksara Bali Galang", size: 24))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color(red: 0.06, green: 0.56, blue: 0.08))
-                        .cornerRadius(19)
-                        .frame(width: 402, height: 50)
-                  
-                }
-            }
-            .padding(.bottom, 20)
+            
             Button(action: {
                 // Add any action you want to perform here
                 // This can be empty if you don't need to perform any additional action
@@ -211,7 +177,31 @@ struct UserModifyProfile: View {
                         .frame(width: 402, height: 50)
                 }
             }
-
+            .padding(.bottom, 20)
+            Button(action: {
+                viewModel.updateUser()
+            }) {
+                
+                    Text("Modifier profile")
+                        .font(Font.custom("Aksara Bali Galang", size: 24))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color(red: 0.06, green: 0.56, blue: 0.08))
+                        .cornerRadius(19)
+                        .frame(width: 402, height: 50)
+                  
+                
+            }
+            .padding(.bottom, 20)
+            NavigationLink(
+                                                    destination: UserProfileView(), // Replace LogInPage with the actual destination
+                                                    isActive: $viewModel.isNavigationActive
+                                                ) {
+                                                    EmptyView()
+                                                }
+                                                .hidden()
+            
             
             
         }
@@ -223,7 +213,7 @@ struct UserModifyProfile: View {
 
 struct UserModifyProfile_Previews: PreviewProvider {
     static var previews: some View {
-        UserModifyProfile()
+        UserModifyProfile(viewModel: UserModifyViewModel())
     }
 }
 

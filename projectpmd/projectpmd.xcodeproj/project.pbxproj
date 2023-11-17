@@ -18,6 +18,7 @@
 		7AB0E50E2AFFB54900ACAF07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E50D2AFFB54900ACAF07 /* User.swift */; };
 		7AB0E5112AFFBCB300ACAF07 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E5102AFFBCB300ACAF07 /* SignUp.swift */; };
 		7AB0E5142AFFBE2600ACAF07 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB0E5132AFFBE2600ACAF07 /* APIManager.swift */; };
+		B0291FD22B07C909000EE0B1 /* ModifyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0291FD12B07C909000EE0B1 /* ModifyUser.swift */; };
 		B08664A82AFD1A3B0073F45A /* UserMdpForgotInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08664A72AFD1A3B0073F45A /* UserMdpForgotInput.swift */; };
 		B08664AA2AFD1EA80073F45A /* EmailSent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08664A92AFD1EA80073F45A /* EmailSent.swift */; };
 		B08664AC2AFD1FA50073F45A /* PasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08664AB2AFD1FA50073F45A /* PasswordReset.swift */; };
@@ -64,6 +65,7 @@
 		7AB0E50D2AFFB54900ACAF07 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7AB0E5102AFFBCB300ACAF07 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		7AB0E5132AFFBE2600ACAF07 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		B0291FD12B07C909000EE0B1 /* ModifyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyUser.swift; sourceTree = "<group>"; };
 		B08664A72AFD1A3B0073F45A /* UserMdpForgotInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMdpForgotInput.swift; sourceTree = "<group>"; };
 		B08664A92AFD1EA80073F45A /* EmailSent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSent.swift; sourceTree = "<group>"; };
 		B08664AB2AFD1FA50073F45A /* PasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReset.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				7AB0E5102AFFBCB300ACAF07 /* SignUp.swift */,
 				7AAC16482AFFDFA7004B955D /* Login.swift */,
 				B09479802B055D09004C3B38 /* UserProfile.swift */,
+				B0291FD12B07C909000EE0B1 /* ModifyUser.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				7AB0E5142AFFBE2600ACAF07 /* APIManager.swift in Sources */,
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
 				7AB0E50E2AFFB54900ACAF07 /* User.swift in Sources */,
+				B0291FD22B07C909000EE0B1 /* ModifyUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

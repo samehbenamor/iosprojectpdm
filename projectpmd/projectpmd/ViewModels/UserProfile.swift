@@ -11,8 +11,27 @@ class UserProfileViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var error: Error?
     
-    private let apiManager = APIManager.shared
     
+    @Published var fullName: String = ""
+    @Published var role: String = ""
+    @Published var location: String = ""
+    
+    
+    private let apiManager = APIManager.shared
+    func fillUserFromUserDefaults() {
+            guard let userId = UserDefaults.standard.string(forKey: "userId") else {
+                return print("Error getting user ID from UserDefaults")
+            }
+
+            self.role = UserDefaults.standard.string(forKey: "userRole") ?? ""
+        self.location = UserDefaults.standard.string(forKey: "userlocation") ?? ""
+            self.fullName = UserDefaults.standard.string(forKey: "userFullName") ?? ""
+           
+        }
+    init() {
+        // ... (other setup)
+        fillUserFromUserDefaults()
+    }
     func authenticateUserProfile() {
         //isLoading = true
         guard let token = UserDefaults.standard.string(forKey: "accessToken") else {
@@ -45,9 +64,9 @@ class UserProfileViewModel: ObservableObject {
                             return
                         }*/
                         //print(jsonResponse)
-                        
+                      
                         guard let userInfo = jsonResponse else { return }
-
+                       
                         let id = userInfo["id"] as? String
                         if let id = id {
                             print("ID: \(id)")
@@ -90,6 +109,15 @@ class UserProfileViewModel: ObservableObject {
                             
                             print("Role: \(roleString)")
                             UserDefaults.standard.set(roleString, forKey: "userRole")
+                        } else {
+                            print("Failed to retrieve role from JSON response")
+                        }
+                        
+                        let location = userInfo["location"] as? String
+                        if let location = location {
+                            
+                            print("Location: \(location)")
+                            UserDefaults.standard.set(location, forKey: "userlocation")
                         } else {
                             print("Failed to retrieve role from JSON response")
                         }
