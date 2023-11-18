@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		430A9DB82B02AD15000FF629 /* myEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A9DB72B02AD15000FF629 /* myEventsView.swift */; };
 		43C43BDD2B043EE9007C5AAD /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C43BDC2B043EE9007C5AAD /* Lesson.swift */; };
+		43DC643F2B0904A6003E348D /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC643E2B0904A6003E348D /* NetworkingManager.swift */; };
+		43DC64412B0904E9003E348D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC64402B0904E9003E348D /* Comment.swift */; };
 		5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960D2AF9208000A84051 /* projectpmdApp.swift */; };
 		507796102AF9208000A84051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077960F2AF9208000A84051 /* ContentView.swift */; };
 		507796122AF9208100A84051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507796112AF9208100A84051 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		430A9DB72B02AD15000FF629 /* myEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myEventsView.swift; sourceTree = "<group>"; };
 		43C43BDC2B043EE9007C5AAD /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		43DC643E2B0904A6003E348D /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		43DC64402B0904E9003E348D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		5077960A2AF9208000A84051 /* projectpmd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectpmd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5077960D2AF9208000A84051 /* projectpmdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projectpmdApp.swift; sourceTree = "<group>"; };
 		5077960F2AF9208000A84051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,8 +95,17 @@
 			isa = PBXGroup;
 			children = (
 				43C43BDC2B043EE9007C5AAD /* Lesson.swift */,
+				43DC64402B0904E9003E348D /* Comment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		43DC643D2B09047B003E348D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				43DC643E2B0904A6003E348D /* NetworkingManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		507796012AF9208000A84051 = {
@@ -102,6 +115,7 @@
 				507796452AF9324A00A84051 /* NimbusSanL-BolIta.otf */,
 				507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */,
 				507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */,
+				43DC643D2B09047B003E348D /* Networking */,
 				5077960C2AF9208000A84051 /* projectpmd */,
 				5077961D2AF9208100A84051 /* projectpmdTests */,
 				507796272AF9208100A84051 /* projectpmdUITests */,
@@ -336,9 +350,11 @@
 				B0D67B502AFA62650079AF80 /* Cree_lessonView.swift in Sources */,
 				430A9DB82B02AD15000FF629 /* myEventsView.swift in Sources */,
 				507796102AF9208000A84051 /* ContentView.swift in Sources */,
+				43DC64412B0904E9003E348D /* Comment.swift in Sources */,
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
 				43C43BDD2B043EE9007C5AAD /* Lesson.swift in Sources */,
 				B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */,
+				43DC643F2B0904A6003E348D /* NetworkingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

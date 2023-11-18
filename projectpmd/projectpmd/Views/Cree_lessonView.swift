@@ -48,7 +48,7 @@ class Cree_lessonViewModel: ObservableObject {
     @Published var lessons: [Lesson] = []
     @Published var lesson = Lesson(name: "", description: "")
     func createLesson(lesson: Lesson) {
-        guard let url = URL(string: "http://localhost:5010/lesson") else {
+        guard let url = URL(string: "http://localhost:5000/lesson") else {
             return
         }
         
@@ -77,8 +77,10 @@ class Cree_lessonViewModel: ObservableObject {
             self.lessons.append(self.lesson)
             self.lesson.name = ""
             self.lesson.description = ""
+            self.objectWillChange.send() // Force update
         }
     }
+
 
     struct Cree_lessonView_Previews: PreviewProvider {
         static var previews: some View {

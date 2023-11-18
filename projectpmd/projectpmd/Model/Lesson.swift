@@ -15,6 +15,7 @@ struct Lesson: Codable, Identifiable {
         return lhs.id == rhs.id
     }
 }
-struct ErrorResponse: Decodable {
+struct ResponseModel: Decodable {
     let message: String
+    let list: [Lesson]
 }
