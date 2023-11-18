@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct EmailSent: View {
-    @ObservedObject var verifyModel: VerificationViewModel
-    //@State private var pin = ""
+struct DeleteAccountConfirmationView: View {
+    @ObservedObject var deleteModel: AccountDeleteViewModel
+    
     @State private var email: String = ""
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        if self.verifyModel.isLoading {
-            ProgressView("Logging in...")
+        if self.deleteModel.isLoading {
+            ProgressView("Deleting in...")
                 .progressViewStyle(CircularProgressViewStyle(tint: .green))
                 .foregroundColor(.green)
                 .background(Color.white.opacity(0.5))
@@ -23,21 +23,17 @@ struct EmailSent: View {
         }
         else {
             VStack(spacing: 20) {
-                Text("Verifier votre compte")
-                    .font(Font.custom("Aksara Bali Galang", size: 24))
-                    .lineSpacing(100)
-                    .foregroundColor(Color(red: 0.36, green: 0.70, blue: 0.36))
-                    .offset(x: 0, y:-150)
+                
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 202, height: 202)
                     .background(
-                        Image("Forgotpass1")
+                        Image("Forgotpass2")
                             .resizable()
                             .frame(width: 202, height: 202)
                     )
                     .offset(x: 0, y:-120)
-                Text("Check your email!")
+                Text("Confirm password")
                     .font(Font.custom("Aksara Bali Galang", size: 40))
                     .lineSpacing(53)
                     .foregroundColor(Color(red: 0.36, green: 0.70, blue: 0.36))
@@ -49,7 +45,7 @@ struct EmailSent: View {
                     .padding(.horizontal)
                     .foregroundColor(colorScheme == .dark ? .white : Color(red: 0.25, green: 0.24, blue: 0.26))
                     .offset(x: 0, y:-80)
-                TextField("Pin", text: $verifyModel.Pin)
+                TextField("Password confirm", text: $deleteModel.PasswordConfirm)
                 
                     .padding(.horizontal)
                     .foregroundColor(.white)
@@ -64,10 +60,10 @@ struct EmailSent: View {
                 
                 
                 Button(action: {
-                    verifyModel.Verify()
+                    deleteModel.checkpassword()
                 }) {
                     //NavigationLink(destination: UserProfileView()) {
-                        Text("Verifier")
+                        Text("Supprimer")
                             .font(Font.custom("Aksara Bali Galang", size: 24))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity)
@@ -83,9 +79,9 @@ struct EmailSent: View {
             .frame(width: 430, height: 932)
             .background(colorScheme == .dark ? Color(red: 0.25, green: 0.24, blue: 0.26) : Color(red: 0.98, green: 0.97, blue: 0.93))
         }
-        NavigationLink(
-            destination: UserProfileView(), // Replace LogInPage with the actual destination
-            isActive: $verifyModel.isNavigationActive
+       NavigationLink(
+            destination: LandingScreen(), // Replace LogInPage with the actual destination
+            isActive: $deleteModel.isNavigationActive
         ) {
             EmptyView()
         }
@@ -94,9 +90,9 @@ struct EmailSent: View {
     
 }
 
-struct EmailSent_Previews: PreviewProvider {
+struct DeleteAccountConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        EmailSent(verifyModel: VerificationViewModel())
+        DeleteAccountConfirmationView(deleteModel: AccountDeleteViewModel())
     }
 }
 

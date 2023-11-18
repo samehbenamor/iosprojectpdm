@@ -12,15 +12,17 @@ struct UserProfileView: View {
     @State private var isActionSheetPresented = false
     @State private var isNavigatingToModifyProfile = false
     @ObservedObject var viewModel = UserProfileViewModel()
-    
+
+    @State private var isNavigatingToLandingScreen = false
     ///
     ///
     @State private var userFullName : String?
     @State private var userEmail : String?
     @State private var userRoleString : String?
-    
+    @State private var locationuser : String?
     
     @State private var userlocation : String?
+    @State private var biobio : String?
     ///
     ///
     var body: some View {
@@ -65,17 +67,31 @@ struct UserProfileView: View {
                         .background(Color(red: 0.06, green: 0.56, blue: 0.08))
                         .cornerRadius(41)
                         .offset(x: 0, y: 0)
-                    Text(viewModel.location)
-                        .font(Font.custom("Nimbus Sans L", size: 18).weight(.bold))
-                        .foregroundColor(Color(red: 0.36, green: 0.70, blue: 0.36))
-                        .offset(x: -0.18, y: 2.11)
+                   
+                        
+                    if let location = locationuser {
+                    Text(location)
+                            .font(Font.custom("Nimbus Sans L", size: 18).weight(.bold))
+                            .foregroundColor(Color(red: 0.36, green: 0.70, blue: 0.36))
+                            .offset(x: -0.18, y: 2.11)
+                    } else {
+                    // Handle the case where the user's full name is nil
+                    Text("test")
+                    }
+                    
                 }
                 .frame(width: 102, height: 28.84)
                 .offset(x: 0, y: -165.58)
+                .onReceive(viewModel.$isNavigationActive) { value in
+                    if value {
+                        locationuser = UserDefaults.standard.object(forKey: "userlocation") as? String
+                        
+                    }}
+                    // Optionally, trigger authentication when the view appears
                 
                 ZStack() {
                     
-                     /*if let userFullName = userFullName {
+                     if let userFullName = userFullName {
                      Text(userFullName)
                      .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
                      .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
@@ -91,8 +107,8 @@ struct UserProfileView: View {
                      .offset(x: 4.56, y: -9.07)
                      } else {
                      Text("No user role found")
-                     }*/
-                    Text(viewModel.fullName) // Use the property directly without the $ prefix
+                     }
+                    /*Text(viewModel.fullName) // Use the property directly without the $ prefix
                         .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
                         .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
                         .offset(x: 2.92, y: -57.93)
@@ -102,7 +118,7 @@ struct UserProfileView: View {
                         
                         .foregroundColor(Color.red)
                         .offset(x: 4.56, y: -9.07)
-                   
+                   */
                     Button(action: {
                         // Add the action you want the button to perform here
                     }) {
@@ -150,6 +166,23 @@ struct UserProfileView: View {
                             Button("Modifier profile") {
                                 isNavigatingToModifyProfile = true
                             }
+                        Button("Logout") {
+                            // Clear user-related values in UserDefaults
+                            UserDefaults.standard.removeObject(forKey: "userId")
+                            UserDefaults.standard.removeObject(forKey: "userFullName")
+                            UserDefaults.standard.removeObject(forKey: "userEmail")
+                            UserDefaults.standard.removeObject(forKey: "userDateOfBirth")
+                            UserDefaults.standard.removeObject(forKey: "userRole")
+                            UserDefaults.standard.removeObject(forKey: "userLocation")
+                            UserDefaults.standard.removeObject(forKey: "isUserVerified")
+                            UserDefaults.standard.removeObject(forKey: "isUserActive")
+                            UserDefaults.standard.removeObject(forKey: "isUserBanned")
+                            UserDefaults.standard.removeObject(forKey: "userBio")
+
+                            // Optional: Synchronize UserDefaults
+                            UserDefaults.standard.synchronize()
+                            isNavigatingToLandingScreen = true
+                        }
                             
                         
                     }
@@ -157,9 +190,13 @@ struct UserProfileView: View {
                 }
                 .frame(width: 352.59, height: 157.79)
                 .offset(x: 0.30, y: -40.11)
-                .onAppear {
-                    userFullName = UserDefaults.standard.object(forKey: "userFullName") as? String
-                    userRoleString = UserDefaults.standard.object(forKey: "userRole") as? String
+                
+                .onReceive(viewModel.$isNavigationActive) { value in
+                    if value {
+                        userFullName = UserDefaults.standard.object(forKey: "userFullName") as? String
+                        userRoleString = UserDefaults.standard.object(forKey: "userRole") as? String
+                    }
+                    // Optionally, trigger authentication when the view appears
                     
                 }
                 
@@ -260,10 +297,17 @@ struct UserProfileView: View {
                                     .stroke(.black, lineWidth: 1.50)
                             )
                             .offset(x: 0, y: 0)
-                        Text("Nous sommes Croissant rouge et nous acceptons volontiers vos dons.")
-                            .font(Font.custom("Nimbus Sans L", size: 18).weight(.bold))
-                            .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
-                            .offset(x: 0.38, y: -11.13)
+                       
+                            
+                        if let bio = biobio {
+                        Text(bio)
+                                .font(Font.custom("Nimbus Sans L", size: 18).weight(.bold))
+                                .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
+                                .offset(x: 0.38, y: -11.13)
+                        } else {
+                        // Handle the case where the user's full name is nil
+                        Text("test")
+                        }
                         //TODO
                         //Add in the database for the user multiple choices of social media he can link and then test their existence, if they exist then show them on a hstack with a spacing. Reminder to add strings containing the user social medias on mongodb
                         //make the user only able to fill his social mediasby editing his profile which i am about to do now
@@ -283,12 +327,26 @@ struct UserProfileView: View {
                             .frame(width: 27, height: 27)
                             .offset(x: 75, y: 70)
                     }
-                    
+                    .onReceive(viewModel.$isNavigationActive) { value in
+                        if value {
+                            biobio = UserDefaults.standard.object(forKey: "userbio") as? String
+                            //userRoleString = UserDefaults.standard.object(forKey: "userRole") as? String
+                        }
+                        // Optionally, trigger authentication when the view appears
+                        
+                    }
                     .frame(width: 353, height: 213.33)
                     .offset(x: -70, y: 225)
                     NavigationLink(
-                                                            destination: UserModifyProfile(viewModel: UserModifyViewModel()), // Replace LogInPage with the actual destination
+                                                            destination: UserModifyProfile(viewModel: UserModifyViewModel(),  generateModel: VerificationViewModel()), // Replace LogInPage with the actual destination
                                                             isActive: $isNavigatingToModifyProfile
+                                                        ) {
+                                                            EmptyView()
+                                                        }
+                                                        .hidden()
+                    NavigationLink(
+                                                            destination: LandingScreen(), // Replace LogInPage with the actual destination
+                                                            isActive: $isNavigatingToLandingScreen
                                                         ) {
                                                             EmptyView()
                                                         }
@@ -307,6 +365,7 @@ struct UserProfileView: View {
             // Optionally, trigger authentication when the view appears
             viewModel.authenticateUserProfile()
         }
+        
     }
     
     

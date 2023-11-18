@@ -26,10 +26,11 @@ class UserModifyViewModel: ObservableObject {
         self.email = UserDefaults.standard.string(forKey: "userEmail") ?? ""
         self.location = UserDefaults.standard.string(forKey: "userlocation") ?? ""
         self.fullName = UserDefaults.standard.string(forKey: "userFullName") ?? ""
-        self.Bio = UserDefaults.standard.string(forKey: "userBio") ?? ""
+        self.Bio = UserDefaults.standard.string(forKey: "userbio") ?? ""
         self.facebook = UserDefaults.standard.string(forKey: "userfb") ?? ""
         self.instagram = UserDefaults.standard.string(forKey: "userinsta") ?? ""
         self.phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber") ?? ""
+        
     }
     init() {
         // ... (other setup)
@@ -86,7 +87,7 @@ class UserModifyViewModel: ObservableObject {
                         UserDefaults.standard.set(self.email, forKey: "userEmail")
                         
                         print("Bio: \(self.Bio)")
-                        UserDefaults.standard.set(self.Bio, forKey: "userBio")
+                        UserDefaults.standard.set(self.Bio, forKey: "userbio")
                         
                         print("facebook: \(self.facebook)")
                         UserDefaults.standard.set(self.facebook, forKey: "userfb")

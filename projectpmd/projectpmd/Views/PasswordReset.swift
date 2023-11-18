@@ -61,7 +61,7 @@ struct PasswordReset: View {
             Button(action: {
                 // Add the action you want the button to perform here
             }) {
-                NavigationLink(destination: EmailSent()) {
+                NavigationLink(destination: EmailSent(verifyModel: VerificationViewModel())) {
                     Text("Reset")
                         .font(Font.custom("Aksara Bali Galang", size: 24))
                         .foregroundColor(.white)

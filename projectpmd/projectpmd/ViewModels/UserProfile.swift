@@ -15,10 +15,13 @@ class UserProfileViewModel: ObservableObject {
     @Published var fullName: String = ""
     @Published var role: String = ""
     @Published var location: String = ""
-    
-    
+    @Published var isNavigationActive: Bool = false
+    @Published var bio: String = ""
     private let apiManager = APIManager.shared
     func fillUserFromUserDefaults() {
+        DispatchQueue.main.async {
+            self.isLoading = true // Show loading view
+                 }
             guard let userId = UserDefaults.standard.string(forKey: "userId") else {
                 return print("Error getting user ID from UserDefaults")
             }
@@ -26,11 +29,12 @@ class UserProfileViewModel: ObservableObject {
             self.role = UserDefaults.standard.string(forKey: "userRole") ?? ""
         self.location = UserDefaults.standard.string(forKey: "userlocation") ?? ""
             self.fullName = UserDefaults.standard.string(forKey: "userFullName") ?? ""
-           
+        self.bio = UserDefaults.standard.string(forKey: "userbio") ?? ""
         }
     init() {
         // ... (other setup)
-        fillUserFromUserDefaults()
+        //fillUserFromUserDefaults()
+        authenticateUserProfile()
     }
     func authenticateUserProfile() {
         //isLoading = true
@@ -63,13 +67,14 @@ class UserProfileViewModel: ObservableObject {
                             print("Failed to parse JSON response")
                             return
                         }*/
-                        //print(jsonResponse)
+                        print(jsonResponse)
                       
                         guard let userInfo = jsonResponse else { return }
                        
                         let id = userInfo["id"] as? String
                         if let id = id {
                             print("ID: \(id)")
+                            UserDefaults.standard.removeObject(forKey: "userId")
                             UserDefaults.standard.set(id, forKey: "userId")
                         } else {
                             print("Failed to retrieve ID from JSON response")
@@ -78,6 +83,7 @@ class UserProfileViewModel: ObservableObject {
                         let fullname = userInfo["fullname"] as? String
                         if let fullname = fullname {
                             print("Fullname: \(fullname)")
+                            UserDefaults.standard.removeObject(forKey: "userFullName")
                             UserDefaults.standard.set(fullname, forKey: "userFullName")
                         } else {
                             print("Failed to retrieve fullname from JSON response")
@@ -86,6 +92,7 @@ class UserProfileViewModel: ObservableObject {
                         let email = userInfo["email"] as? String
                         if let email = email {
                             print("Email: \(email)")
+                            UserDefaults.standard.removeObject(forKey: "userEmail")
                             UserDefaults.standard.set(email, forKey: "userEmail")
                         } else {
                             print("Failed to retrieve email from JSON response")
@@ -96,6 +103,7 @@ class UserProfileViewModel: ObservableObject {
                            
                             
                                 print("Date of birth: \(dateofbirthString)")
+                            UserDefaults.standard.removeObject(forKey: "userDateOfBirth")
                             UserDefaults.standard.set(dateofbirthString, forKey: "userDateOfBirth")
                            
                              
@@ -108,6 +116,7 @@ class UserProfileViewModel: ObservableObject {
                         if let roleString = roleString {
                             
                             print("Role: \(roleString)")
+                            UserDefaults.standard.removeObject(forKey: "userRole")
                             UserDefaults.standard.set(roleString, forKey: "userRole")
                         } else {
                             print("Failed to retrieve role from JSON response")
@@ -117,6 +126,7 @@ class UserProfileViewModel: ObservableObject {
                         if let location = location {
                             
                             print("Location: \(location)")
+                            UserDefaults.standard.removeObject(forKey: "userLocation")
                             UserDefaults.standard.set(location, forKey: "userlocation")
                         } else {
                             print("Failed to retrieve role from JSON response")
@@ -124,6 +134,7 @@ class UserProfileViewModel: ObservableObject {
 
                         let isVerified = userInfo["isVerified"] as? Bool
                         if let isVerified = isVerified {
+                            UserDefaults.standard.removeObject(forKey: "isUserVerified")
                             UserDefaults.standard.set(isVerified, forKey: "isUserVerified")
                             print("Is verified: \(isVerified)")
                         } else {
@@ -133,6 +144,7 @@ class UserProfileViewModel: ObservableObject {
                         let isActive = userInfo["isActive"] as? Bool
                         if let isActive = isActive {
                             print("Is active: \(isActive)")
+                            UserDefaults.standard.removeObject(forKey: "isUserActive")
                             UserDefaults.standard.set(isActive, forKey: "isUserActive")
                         } else {
                             print("Failed to retrieve isActive flag from JSON response")
@@ -141,16 +153,31 @@ class UserProfileViewModel: ObservableObject {
                         let isBanned = userInfo["isBanned"] as? Bool
                         if let isBanned = isBanned {
                             print("Is banned: \(isBanned)")
+                            UserDefaults.standard.removeObject(forKey: "isUserBanned")
                             UserDefaults.standard.set(isBanned, forKey: "isUserBanned")
                         } else {
                             print("Failed to retrieve isBanned flag from JSON response")
                         }
-                       
+                        
+                        let bio = userInfo["profilebio"] as? String
+                        if let bio = bio {
+                            print("Bio: \(bio)")
+                            UserDefaults.standard.removeObject(forKey: "userBio")
+                            UserDefaults.standard.set(bio, forKey: "userbio")
+                        } else {
+                            print("Failed to retrieve bio flag from JSON response")
+                        }
+                        UserDefaults.standard.synchronize()
+                        self.fillUserFromUserDefaults()
                        
                     } catch {
                         print("Error parsing JSON: \(error.localizedDescription)")
                     }
                     
+                }
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.isNavigationActive = true
                 }
             }.resume()
             
