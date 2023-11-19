@@ -3,7 +3,11 @@ import Foundation
 class NetworkingManager {
     static let shared = NetworkingManager()
 
+<<<<<<< Updated upstream
     private let baseURL = "http://localhost:5000/comments"
+=======
+    private let baseURL = "http://localhost:5001/comments"
+>>>>>>> Stashed changes
 
     // MARK: - POST Request to Add Comment
 

@@ -6,7 +6,11 @@ class Liste_lessonViewModel: ObservableObject {
     @Published var lessons: [Lesson] = []
 
     func fetchLessons() {
+<<<<<<< Updated upstream
         guard let url = URL(string: "http://localhost:5000/lessons") else {
+=======
+        guard let url = URL(string: "http://localhost:5001/lessons") else {
+>>>>>>> Stashed changes
             print("URL invalide")
             return
         }
@@ -67,7 +71,11 @@ struct Liste_lessonView: View {
             .navigationBarItems(trailing:
                 NavigationLink(destination: Cree_lessonView()) {
                     Image(systemName: "plus.circle.fill")
+<<<<<<< Updated upstream
                         .foregroundColor(.accentColor)
+=======
+                        .foregroundColor(.green)
+>>>>>>> Stashed changes
                         .font(.title)
                         .padding()
                 }
@@ -87,6 +95,7 @@ struct LessonCellView: View {
     let lesson: Lesson
     
     var body: some View {
+<<<<<<< Updated upstream
         VStack(alignment: .leading, spacing: 8) {
             Text(lesson.name)
                 .font(.title2)
@@ -104,6 +113,36 @@ struct LessonCellView: View {
     }
 }
 
+=======
+        HStack(alignment: .top, spacing: 16) {
+            // Add an image to the left
+            Image(systemName: "book")
+                .resizable()
+                .frame(width: 30, height: 30)
+                .foregroundColor(.green)
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text(lesson.name)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                
+                Text(lesson.description)
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2) // Adjust the number of lines as needed
+            }
+            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 16))
+        }
+        .background(Color.green.opacity(0.4))
+        .cornerRadius(20)
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)) // Adjust padding to increase cell height
+    }
+}
+
+
+
+>>>>>>> Stashed changes
 struct DetailLessonView: View {
     let lesson: Lesson
     @State private var isLiked = false
@@ -126,6 +165,12 @@ struct DetailLessonView: View {
                 Button(action: {
                     // Action for like button
                     isLiked.toggle()
+<<<<<<< Updated upstream
+=======
+                    if isLiked {
+                        isDisliked = false
+                    }
+>>>>>>> Stashed changes
                 }) {
                     Image(systemName: isLiked ? "hand.thumbsup.fill" : "hand.thumbsup")
                         .resizable()
@@ -140,6 +185,12 @@ struct DetailLessonView: View {
                 Button(action: {
                     // Action for dislike button
                     isDisliked.toggle()
+<<<<<<< Updated upstream
+=======
+                    if isDisliked {
+                        isLiked = false
+                    }
+>>>>>>> Stashed changes
                 }) {
                     Image(systemName: isDisliked ? "hand.thumbsdown.fill" : "hand.thumbsdown")
                         .resizable()
@@ -151,6 +202,11 @@ struct DetailLessonView: View {
                         .foregroundColor(isDisliked ? .red : .gray)
                 }
 
+<<<<<<< Updated upstream
+=======
+            
+
+>>>>>>> Stashed changes
                 Button(action: {
                     // Action for share button
                     isShared.toggle()
@@ -177,11 +233,19 @@ struct DetailLessonView: View {
                     showComments.toggle()
                 }) {
                     Image(systemName: "text.bubble.fill")
+<<<<<<< Updated upstream
                         .foregroundColor(.purple)
                         .font(.title)
                     Text("Comments")
                         .fontWeight(.semibold)
                         .foregroundColor(.purple)
+=======
+                        .foregroundColor(.green)
+                        .font(.title)
+                    Text("Comments")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.green)
+>>>>>>> Stashed changes
                 }
                 .sheet(isPresented: $showComments) {
                     CommentView(lesson: lesson)
@@ -201,14 +265,38 @@ struct CommentView: View {
     var body: some View {
         VStack {
             // Display existing comments
+<<<<<<< Updated upstream
             List(comments, id: \.ids) { comment in
                 Text(comment.text)
             }
 
+=======
+            ScrollView {
+                           LazyVStack(alignment: .leading, spacing: 8) {
+                               ForEach(comments, id: \.id) { comment in
+                                   CommentCell(comment: comment, personName: "John Doe", personImage: "image2")
+                               }
+                           }
+                           .background(
+                               RoundedRectangle(cornerRadius: 10)
+                                   .fill(Color.green.opacity(0.1))
+                                   .padding(.horizontal)
+                           )
+                       }
+                       .frame(maxHeight: 500) // Adjust the maxHeight based on your layout
+>>>>>>> Stashed changes
             // Add a text field for entering comments
             TextField("Write your comment...", text: $commentText)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
+<<<<<<< Updated upstream
+=======
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.secondary.opacity(0.1))
+                        .padding(.horizontal)
+                )
+>>>>>>> Stashed changes
 
             // Add a button to submit the comment
             Button("Post Comment") {
@@ -218,6 +306,7 @@ struct CommentView: View {
             .padding()
             .foregroundColor(.white)
             .background(Color.blue)
+<<<<<<< Updated upstream
             .cornerRadius(8)
         }
         .padding()
@@ -225,6 +314,14 @@ struct CommentView: View {
             fetchComments()
         }
     }
+=======
+        }
+              .padding()
+              .onAppear {
+                  fetchComments()
+              }
+          }
+>>>>>>> Stashed changes
 
     // Function to handle posting the comment
     func postComment() {
@@ -273,6 +370,43 @@ struct CommentView: View {
         }
     }
 }
+<<<<<<< Updated upstream
+=======
+struct CommentCell: View {
+    let comment: Comment
+    let personName: String
+    let personImage: String
+
+    init(comment: Comment, personName: String, personImage: String) {
+        self.comment = comment
+        self.personName = personName
+        self.personImage = personImage
+    }
+
+    var body: some View {
+        HStack {
+            // Add an image (replace "profile_image" with your image name)
+            Image(personImage)
+                .resizable()
+                .frame(width: 40, height: 40)
+                .clipShape(Circle())
+
+            // Display name, text, and other comment details
+            VStack(alignment: .leading, spacing: 4) {
+                Text(personName)
+                    .font(.headline)
+                Text(comment.text)
+                    .foregroundColor(.primary)
+            }
+            .padding()
+            .background(RoundedRectangle(cornerRadius: 10).fill(Color.green))
+        }
+        .padding(.horizontal)
+    }
+}
+
+ 
+>>>>>>> Stashed changes
 
 
 struct ActivityView: UIViewControllerRepresentable {
@@ -291,6 +425,10 @@ struct ActivityView: UIViewControllerRepresentable {
 
 struct Liste_lessonView_Previews: PreviewProvider {
     static var previews: some View {
+<<<<<<< Updated upstream
         DetailLessonView(lesson: Lesson(name: "Sample Lesson", description: "Sample Description"))
+=======
+        Liste_lessonView()
+>>>>>>> Stashed changes
     }
 }
