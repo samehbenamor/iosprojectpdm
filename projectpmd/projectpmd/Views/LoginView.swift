@@ -112,11 +112,7 @@ struct LoginView: View {
                     .offset(x: 0, y: 0)
                     
                     
-                    Text("Mot de passe oublié ?")
-                        .font(Font.custom("Aksara Bali Galang", size: 16))
-                        .lineSpacing(100)
-                        .foregroundColor(Color(red: 0.06, green: 0.56, blue: 0.08))
-                        .offset(x: 119, y: 68.50)
+                   
                     Button(action: {
                         LoginViewModel.login()
                     }) {

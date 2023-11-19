@@ -34,7 +34,7 @@ class UserProfileViewModel: ObservableObject {
     init() {
         // ... (other setup)
         //fillUserFromUserDefaults()
-        authenticateUserProfile()
+        //authenticateUserProfile()
     }
     func authenticateUserProfile() {
         //isLoading = true
@@ -126,7 +126,7 @@ class UserProfileViewModel: ObservableObject {
                         if let location = location {
                             
                             print("Location: \(location)")
-                            UserDefaults.standard.removeObject(forKey: "userLocation")
+                            UserDefaults.standard.removeObject(forKey: "userlocation")
                             UserDefaults.standard.set(location, forKey: "userlocation")
                         } else {
                             print("Failed to retrieve role from JSON response")
@@ -157,6 +157,34 @@ class UserProfileViewModel: ObservableObject {
                             UserDefaults.standard.set(isBanned, forKey: "isUserBanned")
                         } else {
                             print("Failed to retrieve isBanned flag from JSON response")
+                        }
+                        
+                        
+                        let fb = userInfo["facebooklink"] as? Bool
+                        if let fb = fb {
+                            print("Facebook: \(fb)")
+                            UserDefaults.standard.removeObject(forKey: "userfb")
+                            UserDefaults.standard.set(fb, forKey: "userfb")
+                        } else {
+                            print("Failed to retrieve fb flag from JSON response")
+                        }
+                        
+                        let insta = userInfo["instagramlink"] as? Bool
+                        if let insta = insta {
+                            print("instagram: \(insta)")
+                            UserDefaults.standard.removeObject(forKey: "userinsta")
+                            UserDefaults.standard.set(fb, forKey: "userinsta")
+                        } else {
+                            print("Failed to retrieve insta flag from JSON response")
+                        }
+                        
+                        let phone = userInfo["phonenumber"] as? Bool
+                        if let phone = phone {
+                            print("phone: \(phone)")
+                            UserDefaults.standard.removeObject(forKey: "phoneNumber")
+                            UserDefaults.standard.set(phone, forKey: "phoneNumber")
+                        } else {
+                            print("Failed to retrieve phone flag from JSON response")
                         }
                         
                         let bio = userInfo["profilebio"] as? String

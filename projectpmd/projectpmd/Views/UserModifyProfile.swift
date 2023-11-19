@@ -15,10 +15,11 @@ struct UserModifyProfile: View {
     @ObservedObject var generateModel: VerificationViewModel
     @State private var selectedImage: Image? = nil
     @State private var isImagePickerPresented: Bool = false
+    let isVerified = UserDefaults.standard.bool(forKey: "isUserVerified")
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
     @State private var isEditing = false
-    let isVerified = UserDefaults.standard.bool(forKey: "isVerified")
+    //let isVerified = UserDefaults.standard.bool(forKey: "isVerified")
     var body: some View {
         
         ScrollView {
@@ -181,21 +182,24 @@ struct UserModifyProfile: View {
                 }
                 .padding(.bottom, 28)
             }
-            NavigationLink(destination: PasswordReset(), isActive: $isNavigationActive) {
+            NavigationLink(destination: PasswordReset(viewModel: resetPasswordViewModel()), isActive: $isNavigationActive) {
                             EmptyView()
                         }
 
                         Button(action: {
                             //verifyWithFaceID()
+                            
                         }) {
-                            Text("Reset password")
-                                .font(Font.custom("Aksara Bali Galang", size: 24))
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color(red: 0.87, green: 0.90, blue: 0.16))
-                                .cornerRadius(19)
-                                .frame(width: 402, height: 50)
+                            NavigationLink(destination: PasswordReset(viewModel: resetPasswordViewModel())) {
+                                Text("Reset password")
+                                    .font(Font.custom("Aksara Bali Galang", size: 24))
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color(red: 0.87, green: 0.90, blue: 0.16))
+                                    .cornerRadius(19)
+                                    .frame(width: 402, height: 50)
+                            }
                         }
                         .padding(.bottom, 20)
             Button(action: {
@@ -215,13 +219,7 @@ struct UserModifyProfile: View {
             }
             .padding(.bottom, 20)
             
-            NavigationLink(
-                destination: UserProfileView(), // Replace LogInPage with the actual destination
-                isActive: $viewModel.isNavigationActive
-            ) {
-                EmptyView()
-            }
-            .hidden()
+           
             ///
             NavigationLink(
                 destination: EmailSent(verifyModel: VerificationViewModel()), // Replace LogInPage with the actual destination

@@ -21,22 +21,59 @@ class SignUp: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isNavigationActive: Bool = false
     // Function to send signup request
-    private func validate() -> Bool {
-        // Check if all required fields are filled in and the passwords match.
-        if fullname.isEmpty || email.isEmpty || password.isEmpty || passwordVerify.isEmpty || password != passwordVerify {
-          return false
-        } else {
-          return true
+    func validate() -> Bool {
+        var errors: [String] = []
+
+        // Check if fullname is not empty and contains no numbers
+        if fullname.isEmpty {
+            errors.append("Full name cannot be empty.")
+        } else if fullname.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
+            errors.append("Full name cannot contain numbers.")
         }
-      }
+
+        // Check if email is not empty and has both '@' and '.'
+        if email.isEmpty {
+            errors.append("Email cannot be empty.")
+        } else if !email.contains("@") || !email.contains(".") {
+            errors.append("Invalid email format. Email must contain '@' and '.'.")
+        }
+
+        // Check if passwords are not empty, match, and have at least 8 characters
+        if password.isEmpty || passwordVerify.isEmpty {
+            errors.append("Passwords cannot be empty.")
+        } else if password != passwordVerify {
+            errors.append("Passwords do not match.")
+        } else if password.count < 8 {
+            errors.append("Password must be at least 8 characters long.")
+        }
+
+        // Check if role is either "Organisateur" or "Contributeur"
+        if !["Organisateur", "Contributeur"].contains(role) {
+            errors.append("Invalid role. Role must be either 'Organisateur' or 'Contributeur'.")
+        }
+
+        // Combine error messages and display them if any errors exist
+        if !errors.isEmpty {
+            signupError = errors.joined(separator: " ")
+            //showAlert(title: "Validation Errors", message: errorMessage)
+            return false
+        } else {
+            return true
+        }
+    }
+
+
+    
+    
+    
     func signup() {
+        
+        if !validate() {
+              return
+            }
         DispatchQueue.main.async {
             self.isLoading = true // Show loading view
                  }
-        if !validate() {
-              signupError = "Please fill in all required fields and make sure that the passwords match."
-              return
-            }
         // Create a JSON body
         let dateOfBirthJSON: String = dateofbirth.formatted(.iso8601)
         let requestBody: [String: Any] = [

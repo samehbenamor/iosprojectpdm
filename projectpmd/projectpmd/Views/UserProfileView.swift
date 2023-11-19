@@ -12,7 +12,7 @@ struct UserProfileView: View {
     @State private var isActionSheetPresented = false
     @State private var isNavigatingToModifyProfile = false
     @ObservedObject var viewModel = UserProfileViewModel()
-
+    let isVerified = UserDefaults.standard.bool(forKey: "isUserVerified")
     @State private var isNavigatingToLandingScreen = false
     ///
     ///
@@ -92,10 +92,18 @@ struct UserProfileView: View {
                 ZStack() {
                     
                      if let userFullName = userFullName {
-                     Text(userFullName)
-                     .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
-                     .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
-                     .offset(x: 2.92, y: -57.93)
+                         HStack {
+                             Text(userFullName)
+                                 .font(Font.custom("Nimbus Sans L", size: 32).weight(.bold))
+                                 .foregroundColor(colorScheme == .dark ? Color(.white) : Color(.black))
+                                 .offset(x: 2.92, y: -57.93)
+                             if isVerified {
+                                 Image(systemName: "checkmark.circle.fill")
+                                     .foregroundColor(Color.green)
+                                     .font(Font.system(size: 24))
+                                     .offset(x: 2.92, y: -58)
+                             }
+                         }
                      } else {
                      // Handle the case where the user's full name is nil
                      Text("test")
@@ -364,6 +372,8 @@ struct UserProfileView: View {
         .onAppear {
             // Optionally, trigger authentication when the view appears
             viewModel.authenticateUserProfile()
+            viewModel.fillUserFromUserDefaults()
+            
         }
         
     }
@@ -373,7 +383,7 @@ struct UserProfileView: View {
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileView()
+        UserProfileView(viewModel: UserProfileViewModel())
     }
 }
 
