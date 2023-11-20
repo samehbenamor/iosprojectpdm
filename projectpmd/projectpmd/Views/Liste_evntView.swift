@@ -1,4 +1,5 @@
 import SwiftUI
+import UserNotifications
 
 
 
@@ -6,7 +7,7 @@ class Liste_eventViewModel: ObservableObject {
     @Published var events: [Event] = []
 
     func fetchEvents() {
-        guard let url = URL(string: "http://localhost:5000/api/evenements") else {
+        guard let url = URL(string: "http://localhost:3000/api/evenements") else {
             print("URL invalide")
             return
         }
@@ -24,6 +25,8 @@ class Liste_eventViewModel: ObservableObject {
             let decoder = JSONDecoder()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            dateFormatter.timeZone = TimeZone(identifier: "UTC") // Définissez le fuseau horaire de la date d'origine (UTC)
+
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
 
             do {
@@ -42,9 +45,21 @@ class Liste_eventViewModel: ObservableObject {
         }.resume()
     }
 }
+class FavoritedEvents: ObservableObject {
+    @Published var favoriteEvents: [Event] = []
+
+    func addToFavorites(event: Event) {
+        favoriteEvents.append(event)
+    }
+
+    // Ajoutez d'autres fonctions pour gérer la suppression des événements des favoris si nécessaire
+}
 struct Liste_eventView: View {
     @StateObject var viewModel = Liste_eventViewModel()
-    @State private var selectedEvent: Event?
+        @StateObject var favoritedEvents = FavoritedEvents()
+        @State private var selectedEvent: Event?
+
+
     var body: some View {
         NavigationView {
             List(viewModel.events, id: \.id) { event in
@@ -70,14 +85,22 @@ struct Liste_eventView: View {
                                .navigationBarTitle("Liste des Événements", displayMode: .inline)
                                .navigationBarItems(trailing:
                                    
-                                       
+                                                    HStack{
                                    NavigationLink(destination: Cree_evntView()){
-                                           Image(systemName: "plus.circle.fill")
-                                               .foregroundColor(.white)
-                                               .padding(8)
-                                               .background(RoundedRectangle(cornerRadius: 8).fill(Color(red: 0.36, green: 0.7, blue: 0.36)))
+                                       Image(systemName: "plus.circle.fill")
+                                           .foregroundColor(.white)
+                                           .padding(8)
+                                           .background(RoundedRectangle(cornerRadius: 8).fill(Color(red: 0.36, green: 0.7, blue: 0.36)))
                                        
                                    }
+                                   NavigationLink(destination: MyEventsView(allEvents: viewModel.events).environmentObject(favoritedEvents)) {
+                                       Image(systemName: "star.fill")
+                                           .foregroundColor(.white)
+                                           .padding(8)
+                                           .background(RoundedRectangle(cornerRadius: 8).fill(Color(red: 0.36, green: 0.7, blue: 0.36)))
+                                   }
+
+}
                                )
                                .sheet(item: $selectedEvent) { selected in
                                               // Affichez la vue détaillée de l'événement sélectionné
@@ -89,10 +112,84 @@ struct Liste_eventView: View {
         }
     }
 }
+struct MyEventsView: View {
+    @EnvironmentObject var favoritedEvents: FavoritedEvents
+    var allEvents: [Event] // Liste complète de tous les événements
+    var currentDate: Date {
+          Date() // Obtenir la date actuelle du système
+      }
+    var body: some View {
+        List {
+            ForEach(allEvents.filter { event in
+                !favoritedEvents.favoriteEvents.contains(where: { $0.id == event.id })
+            }, id: \.id) { event in
+                VStack(alignment: .leading) {
+                    Text(event.eventName)
+                        .font(.headline)
+                    Text("Date: \(event.eventDate)")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                    // Affichez d'autres détails de l'événement si nécessaire
+                    if isEventToday(eventDate: event.eventDate) {
+                        Text("Votre événement commence aujourd'hui!")
+                            .font(.subheadline)
+                            .foregroundColor(.blue)
+                        // Envoyer une notification ici
+                    }
+                }
+            }
+        }
+        .navigationBarTitle("Mes Événements")
+    }
+    func isEventToday(eventDate: Date) -> Bool {
+           let calendar = Calendar.current
+           return calendar.isDate(eventDate, inSameDayAs: currentDate)
+       }
+    
+    func scheduleNotification(for event: Event) {
+        let content = UNMutableNotificationContent()
+        content.title = "Votre événement commence maintenant!"
+        content.body = "\(event.eventName) a commencé à \(event.eventDate)"
+        content.sound = UNNotificationSound.default
+
+        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: event.eventDate)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                UNUserNotificationCenter.current().add(request) { error in
+                    if let error = error {
+                        print("Error scheduling notification: \(error.localizedDescription)")
+                    } else {
+                        print("Notification scheduled successfully!")
+                    }
+                }
+            } else if let error = error {
+                print("Error requesting authorization for notifications: \(error.localizedDescription)")
+            }
+        }
+    }
+
+   
+}
+
+
+
+struct MyEventsView_Previews: PreviewProvider {
+    static var previews: some View {
+        MyEventsView(allEvents: []) // Ajoutez vos événements ici
+            .environmentObject(FavoritedEvents()) // Assurez-vous que l'objet FavoritedEvents est disponible
+    }
+}
 
 struct DetailEventView: View {
+
     let event: Event
-    @State private var isInterested = false
+        @EnvironmentObject var favoritedEvents: FavoritedEvents
+        @State private var isInterested = false
 
     private var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -119,20 +216,20 @@ struct DetailEventView: View {
                             isInterested.toggle()
                         }) {
                             HStack {
-                                Image(systemName: isInterested ? "star.fill" : "star")
-                                    .foregroundColor(isInterested ? .yellow : .gray)
-                                    .font(.title)
-                                Text(isInterested ? "Intéressé" : "Intéresser")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(isInterested ? .yellow : .gray)
-                            }
-                            .padding()
-                        }
-                        .buttonStyle(BorderlessButtonStyle())
-                        .animation(.spring())
-                    }
-                    .padding()
-    }
+                                                Image(systemName: isInterested ? "star.fill" : "star")
+                                                    .foregroundColor(isInterested ? .yellow : .gray)
+                                                    .font(.title)
+                                                Text(isInterested ? "Intéressé" : "Intéresser")
+                                                    .fontWeight(.semibold)
+                                                    .foregroundColor(isInterested ? .yellow : .gray)
+                                            }
+                                            .padding()
+                                        }
+                                        .buttonStyle(BorderlessButtonStyle())
+                                        .animation(.spring())
+                                    }
+                                    .padding()
+                                }
     
     private func formattedDate(_ date: Date) -> String {
         dateFormatter.string(from: date)

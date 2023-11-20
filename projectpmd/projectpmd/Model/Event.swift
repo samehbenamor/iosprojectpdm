@@ -7,6 +7,8 @@ struct Event: Codable, Identifiable {
     var textwhats: String
     var eventLocation: String
     var eventDescription: String
+    var imageURL: String? // Champ pour l'URL de l'image
+
   
     
     enum CodingKeys: String, CodingKey {
@@ -16,6 +18,8 @@ struct Event: Codable, Identifiable {
         case textwhats
         case eventLocation
         case eventDescription
+        case imageURL // Ajout du champ pour l'URL de l'image dans les clés de codage
+
     }
     
     static func == (lhs: Event, rhs: Event) -> Bool {
