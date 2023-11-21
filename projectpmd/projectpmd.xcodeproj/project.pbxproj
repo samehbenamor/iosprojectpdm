@@ -20,6 +20,10 @@
 		5077962B2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */; };
 		B0D67B502AFA62650079AF80 /* Cree_lessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B4F2AFA62650079AF80 /* Cree_lessonView.swift */; };
 		B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */; };
+<<<<<<< Updated upstream
+=======
+		B0FC97DD2B0C31E8002662CC /* Liste_LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FC97DC2B0C31E8002662CC /* Liste_LessonView.swift */; };
+>>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
 		B0D67B4F2AFA62650079AF80 /* Cree_lessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cree_lessonView.swift; sourceTree = "<group>"; };
 		B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liste_evntView.swift; sourceTree = "<group>"; };
+<<<<<<< Updated upstream
+=======
+		B0FC97DC2B0C31E8002662CC /* Liste_LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liste_LessonView.swift; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +188,10 @@
 				B0D67B4F2AFA62650079AF80 /* Cree_lessonView.swift */,
 				B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */,
 				430A9DB72B02AD15000FF629 /* myEventsView.swift */,
+<<<<<<< Updated upstream
+=======
+				B0FC97DC2B0C31E8002662CC /* Liste_LessonView.swift */,
+>>>>>>> Stashed changes
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,6 +363,10 @@
 				430A9DB82B02AD15000FF629 /* myEventsView.swift in Sources */,
 				507796102AF9208000A84051 /* ContentView.swift in Sources */,
 				43DC64412B0904E9003E348D /* Comment.swift in Sources */,
+<<<<<<< Updated upstream
+=======
+				B0FC97DD2B0C31E8002662CC /* Liste_LessonView.swift in Sources */,
+>>>>>>> Stashed changes
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
 				43C43BDD2B043EE9007C5AAD /* Lesson.swift in Sources */,
 				B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */,

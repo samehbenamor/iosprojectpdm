@@ -7,12 +7,15 @@
 
 import Foundation
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 struct Comment: Codable {
     let ids: String?
     let lessonId: String
     let text: String
 }
 =======
+=======
+>>>>>>> Stashed changes
 
 struct Comment: Codable, Identifiable {
     let id: String? // Rename from 'ids' to 'id'
@@ -28,4 +31,7 @@ struct Comment: Codable, Identifiable {
 }
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

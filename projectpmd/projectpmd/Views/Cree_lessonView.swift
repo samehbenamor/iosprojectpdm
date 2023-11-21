@@ -49,8 +49,13 @@ class Cree_lessonViewModel: ObservableObject {
     @Published var lesson = Lesson(name: "", description: "")
     func createLesson(lesson: Lesson) {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         guard let url = URL(string: "http://localhost:5000/lesson") else {
 =======
+        guard let url = URL(string: "http://localhost:5001/lesson") else {
+>>>>>>> Stashed changes
+=======
+
         guard let url = URL(string: "http://localhost:5001/lesson") else {
 >>>>>>> Stashed changes
             return
