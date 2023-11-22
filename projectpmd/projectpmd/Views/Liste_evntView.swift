@@ -1,4 +1,4 @@
-import SwiftUI
+/*import SwiftUI
 import UserNotifications
 
 
@@ -7,7 +7,7 @@ class Liste_eventViewModel: ObservableObject {
     @Published var events: [Event] = []
 
     func fetchEvents() {
-        guard let url = URL(string: "http://localhost:3000/api/evenements") else {
+        guard let url = URL(string: "http://localhost:5001/api/evenements") else {
             print("URL invalide")
             return
         }
@@ -86,7 +86,7 @@ struct Liste_eventView: View {
                                .navigationBarItems(trailing:
                                    
                                                     HStack{
-                                   NavigationLink(destination: Cree_evntView()){
+                                   NavigationLink(destination: AddEventView()){
                                        Image(systemName: "plus.circle.fill")
                                            .foregroundColor(.white)
                                            .padding(8)
@@ -242,3 +242,4 @@ struct Liste_eventView_Previews: PreviewProvider {
         Liste_eventView()
     }
 }
+*/

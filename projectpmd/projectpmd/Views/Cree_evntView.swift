@@ -1,10 +1,10 @@
-import SwiftUI
+/*import SwiftUI
 
 struct Cree_evntView: View {
     
     @StateObject var viewModel = Cree_evntViewModel()
       @State private var event = Event(eventName: "", eventDate: Date(), textwhats: "", eventLocation: "", eventDescription: "", imageURL: "")
-      @State private var selectedImage: UIImage? // État pour l'image sélectionnée
+      @State private var image: UIImage? // État pour l'image sélectionnée
       @State private var isImagePickerPresented = false // État pour afficher l'UIImagePicker
       @State private var showMessage = false
       @State private var message = ""
@@ -17,12 +17,12 @@ struct Cree_evntView: View {
                             // Afficher l'UIImagePicker
                         }
                         .sheet(isPresented: $isImagePickerPresented) {
-                            ImagePicker(selectedImage: $selectedImage)
+                            ImagePicker(selectedImage: $image)
                         }
             
-            if let selectedImage = selectedImage {
+            if let image = image {
                             // Afficher l'image sélectionnée si elle existe
-                            Image(uiImage: selectedImage)
+                            Image(uiImage: image)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: .infinity, maxHeight: 200)
@@ -64,9 +64,9 @@ struct Cree_evntView: View {
            
 
             Button("Create Event") {
-                if let image = selectedImage {
+                if let image = image {
                     // Logic to upload image and get the image URL
-                    // Use the obtained imageURL to assign it to event.imageURL
+                    // Use the obtained image to assign it to event.image
                 }
                 viewModel.createEvent(event: event)
                 showAlert = true
@@ -131,12 +131,12 @@ struct ImagePicker: UIViewControllerRepresentable {
 }
 
 
-class Cree_evntViewModel: ObservableObject {
+/*class Cree_evntViewModel: ObservableObject {
     @Published var events: [Event] = []
     @Published var event = Event(id: "", eventName: "", eventDate: Date(), textwhats: "", eventLocation: "", eventDescription: "", imageURL: "")
     
     func createEvent(event: Event) {
-        guard let url = URL(string: "http://localhost:3000/api/evenement") else {
+        guard let url = URL(string: "http://localhost:5001/api/evenement") else {
             print("URL invalide")
             return
         }
@@ -206,3 +206,4 @@ class Cree_evntViewModel: ObservableObject {
     }
 }
 
+*/*/

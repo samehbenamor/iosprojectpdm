@@ -14,7 +14,10 @@ struct projectpmdApp: App {
             //ContentView()
             //Cree_evntView()
              //List_eventView()
-            Liste_eventView()
+            //Liste_eventView()
+            //AddEventView()
+            MyEventsView()
+            
             
         }
     }

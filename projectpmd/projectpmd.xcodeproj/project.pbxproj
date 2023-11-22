@@ -15,6 +15,9 @@
 		5077961F2AF9208100A84051 /* projectpmdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077961E2AF9208100A84051 /* projectpmdTests.swift */; };
 		507796292AF9208100A84051 /* projectpmdUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507796282AF9208100A84051 /* projectpmdUITests.swift */; };
 		5077962B2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5077962A2AF9208100A84051 /* projectpmdUITestsLaunchTests.swift */; };
+		B0464B362B0D2862000CED0E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B0464B352B0D2862000CED0E /* Alamofire */; };
+		B0464B382B0D4471000CED0E /* DetailEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0464B372B0D4471000CED0E /* DetailEventView.swift */; };
+		B053DCA42B0C3DE30010FF95 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053DCA32B0C3DE30010FF95 /* AddEventView.swift */; };
 		B0D45BA82B0A6B7900D4C3F0 /* MyEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D45BA72B0A6B7900D4C3F0 /* MyEventsView.swift */; };
 		B0D67B502AFA62650079AF80 /* Cree_evntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */; };
 		B0D67B522AFA6D000079AF80 /* Liste_evntView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */; };
@@ -53,10 +56,12 @@
 		507796402AF9311000A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
 		507796412AF9311000A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
 		507796422AF9311000A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
-		507796452AF9324A00A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-BolIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
-		507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Reg.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
-		507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-Bol.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
-		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
+		507796452AF9324A00A84051 /* NimbusSanL-BolIta.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-BolIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-BolIta.otf"; sourceTree = "<group>"; };
+		507796462AF9324A00A84051 /* NimbusSanL-Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-Reg.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Reg.otf"; sourceTree = "<group>"; };
+		507796472AF9324B00A84051 /* NimbusSanL-Bol.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-Bol.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-Bol.otf"; sourceTree = "<group>"; };
+		507796482AF9324B00A84051 /* NimbusSanL-RegIta.otf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "NimbusSanL-RegIta.otf"; path = "../../../../Downloads/nimbus-sans-l/NimbusSanL-RegIta.otf"; sourceTree = "<group>"; };
+		B0464B372B0D4471000CED0E /* DetailEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventView.swift; sourceTree = "<group>"; };
+		B053DCA32B0C3DE30010FF95 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		B0D45BA72B0A6B7900D4C3F0 /* MyEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsView.swift; sourceTree = "<group>"; };
 		B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cree_evntView.swift; sourceTree = "<group>"; };
 		B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Liste_evntView.swift; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0464B362B0D2862000CED0E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +172,8 @@
 				B0D67B4F2AFA62650079AF80 /* Cree_evntView.swift */,
 				B0D67B512AFA6D000079AF80 /* Liste_evntView.swift */,
 				B0D45BA72B0A6B7900D4C3F0 /* MyEventsView.swift */,
+				B053DCA32B0C3DE30010FF95 /* AddEventView.swift */,
+				B0464B372B0D4471000CED0E /* DetailEventView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +227,9 @@
 			dependencies = (
 			);
 			name = projectpmd;
+			packageProductDependencies = (
+				B0464B352B0D2862000CED0E /* Alamofire */,
+			);
 			productName = projectpmd;
 			productReference = 5077960A2AF9208000A84051 /* projectpmd.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +302,9 @@
 				Base,
 			);
 			mainGroup = 507796012AF9208000A84051;
+			packageReferences = (
+				B0464B342B0D2862000CED0E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 5077960B2AF9208000A84051 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,7 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0464B382B0D4471000CED0E /* DetailEventView.swift in Sources */,
 				B0D67B502AFA62650079AF80 /* Cree_evntView.swift in Sources */,
+				B053DCA42B0C3DE30010FF95 /* AddEventView.swift in Sources */,
 				B0D45BA82B0A6B7900D4C3F0 /* MyEventsView.swift in Sources */,
 				507796102AF9208000A84051 /* ContentView.swift in Sources */,
 				5077960E2AF9208000A84051 /* projectpmdApp.swift in Sources */,
@@ -657,6 +673,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B0464B342B0D2862000CED0E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B0464B352B0D2862000CED0E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0464B342B0D2862000CED0E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 507796022AF9208000A84051 /* Project object */;
 }

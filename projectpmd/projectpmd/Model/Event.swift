@@ -1,5 +1,5 @@
 import Foundation
-
+/*
 struct Event: Codable, Identifiable {
     var id: String?
     var eventName: String
@@ -24,5 +24,24 @@ struct Event: Codable, Identifiable {
     
     static func == (lhs: Event, rhs: Event) -> Bool {
         return lhs.id == rhs.id
+    }
+}*/
+struct Event: Codable, Identifiable {
+    let id: String
+    let eventName: String
+    let eventDate: Date
+    let textwhats: String
+    let eventLocation: String
+    let eventDescription: String
+    let imageURL: String // Assurez-vous que la clé pour l'image correspond exactement à celle dans votre JSON
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case eventName
+        case eventDate
+        case textwhats
+        case eventLocation
+        case eventDescription
+        case imageURL // Assurez-vous que la clé pour l'image correspond exactement à celle dans votre JSON
     }
 }
